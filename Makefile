@@ -1,5 +1,8 @@
 
-dev:
+dev-troubleshot-js:
+	bin/dev
+
+dev-old:
 	rake assets:precompile
 	rails s
 
