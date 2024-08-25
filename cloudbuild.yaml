@@ -20,16 +20,20 @@ substitutions:
   # GOB doesnt allow me to pass ENVs to CB so I need to do this :/
   # or get it from SECRET MANAGER :) https://cloud.google.com/build/docs/securing-builds/use-secrets
   # Your build failed to run: invalid build: invalid .substitutions field: substitution key "REGION" does not respect format "^_[A-Z0-9_]+$" and is not an overridable built-in substitutions
-  _REGION: 'us-central1'
-  _GCP_REGION: 'us-central1'
-  _REPO_NAME: 'ror7-gemini-saga-gallery'
+  _REGION: 'europe-west1'
+  _GCP_REGION: 'europe-west1'
+  _MY_REPO_NAME: 'ror7-gemini-saga-gallery' # This ALREADY EXISTS!
   _APP_NAME: 'saga-gallery'
   #_PROJECT_ID: puffin-tours
   #SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
+  #_FINAL_AR_IMAGE_WITHOUT_TAG: "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}"
+  _FINAL_AR_IMAGE_WITHOUT_TAG: "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery"
   #MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
 images:
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_APP_NAME}:latest"
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_APP_NAME}:sha-$SHORT_SHA"
+- "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
+- "${_FINAL_AR_IMAGE_WITHOUT_TAG}:sha-$SHORT_SHA"
+# - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}:latest"
+#- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}:sha-$SHORT_SHA"
 
 ################################################################################
 # TODO(ricc): enable availableSecrets as below once Cloud build is able to push again
@@ -50,14 +54,14 @@ steps:
 # First I build a docker latest version..
 - name: 'gcr.io/cloud-builders/docker'
   id: Docker Build - to CB_LATEST # might be error prone vs the one create from computer
-  args: ['build', '-t', "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest", '.']
+  args: ['build', '-t', "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}:latest", '.']
 
 # Then I tag it with another so it survives multiple builds..
 - name: 'gcr.io/cloud-builders/docker'
   id: Tag latest to vVERSION
   args:
     - 'tag'
-    - "${GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
+    - "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}:latest"
 #    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
 #    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
   env:
