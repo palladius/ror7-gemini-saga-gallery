@@ -16,6 +16,8 @@ set -euo pipefail
 echo '🚗🏷️ [AutoTag] Riccardo Getting APP_NAME and SKAFFOLD_DEFAULT_REPO from config..'
 echo "🚗🏷️ [AutoTag] APP_NAME=$APP_NAME"
 echo "🚗🏷️ [AutoTag] SKAFFOLD_DEFAULT_REPO=$SKAFFOLD_DEFAULT_REPO"
+echo "🚗🏷️ [AutoTag] FINAL_AR_IMAGE_WITHOUT_TAG=$FINAL_AR_IMAGE_WITHOUT_TAG"
+
 #export APP_NAME='puffintours'
 #SKAFFOLD_DEFAULT_REPO="europe-west1-docker.pkg.dev/puffin-tours/${APP_NAME}/${APP_NAME}"
 
@@ -33,10 +35,10 @@ set -x
 # docker images | grep puffin
 
 echo '🚗🏷️ [AutoTag] Tagging and pushing..'
-docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$GIT_SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION" ||
-    docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION" ||
+docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$GIT_SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION" ||
+    docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION" ||
         echo I hope either works..
-docker push "$SKAFFOLD_DEFAULT_REPO" --all-tags
+docker push "$FINAL_AR_IMAGE_WITHOUT_TAG" --all-tags
 
 
 # echo '3. Vediamo che immagini DHH-iane ci siano (AFTER)..'

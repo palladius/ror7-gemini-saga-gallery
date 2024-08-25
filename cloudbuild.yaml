@@ -86,6 +86,7 @@ steps:
   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
   # I believe this is silly and redundant but man - I'm despetrate
   - 'SHORT_SHA=$SHORT_SHA'
+  - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
 
 # # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
 # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
