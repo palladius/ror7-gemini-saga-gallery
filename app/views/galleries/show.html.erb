@@ -1,38 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @gallery %>
-<!-- original -->
-<div>
-  <%= link_to "Edit this gallery", edit_gallery_path(@gallery) %> |
-  <%= link_to "Back to galleries", galleries_path %>
-  <%= button_to "Destroy this gallery", @gallery, method: :delete %>
-</div>
-<!-- Gemini 2nd trial - generic -->
 <%= render 'shared/actions', object: @gallery %>
 
 <div class='prove_varie' >
-  <h2>Carousel partial (Gemini)</h2>
-
+  <%= h2 'Carousel partial (Gemini)' %>
     <%= render 'gallery_carousel', gallery: @gallery %>
-
-
-  <h2>GRID partial</h2>
-
+  <%= h2 'GRID partial' %>
     <%= render 'gallery_grid', gallery: @gallery %>
 
-
-
-  <h2>Testing Carousel - helloworld (doesnt work)</h2>
-
-    <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-      </div>
-    </div>
-
-  <h2>Lightbox test</h2>
+  <%= h2 'Lightbox test' %>
 
     from https://www.stimulus-components.com/docs/stimulus-lightbox :
 

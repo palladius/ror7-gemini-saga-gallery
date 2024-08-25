@@ -24,7 +24,7 @@
   <% end %>
 
   <div class="p-4">
-    <h2 class="text-lg font-semibold mb-2"><%= gallery.title %></h2>
+    <h2 class="text-lg font-semibold mb-2"><%= link_to gallery.title, gallery %></h2>
     <% if gallery.description.present? %>
       <p class="text-gray-600"><%= gallery.description %></p>
     <% end %>

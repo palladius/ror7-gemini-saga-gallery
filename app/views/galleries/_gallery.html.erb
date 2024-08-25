@@ -17,6 +17,10 @@
   <p>
     <strong>Cover image:</strong>
     <%= gallery.cover_image_id %>
+    <%#= gallery.cover_image # SQLite3::SQLException: no such column: media.cover_image_id
+    %>
+    <%= fancy_link_to gallery.cover_image_manhouse,gallery.cover_image_manhouse %>
+
   </p>
 
   <p>

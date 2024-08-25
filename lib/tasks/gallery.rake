@@ -59,6 +59,11 @@ namespace :gallery do
 
         if gallery.cover_image_id.nil?
           gallery.update(cover_image_id: medium.id)
+          # upload cover image to gallery
+          gallery.cover_image_file.attach(
+            io: File.open(image_path),
+            filename: File.basename(image_path),
+            content_type: "image/#{file_extension}")
         end
       end
     end

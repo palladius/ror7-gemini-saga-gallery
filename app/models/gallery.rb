@@ -8,22 +8,17 @@ class Gallery < ApplicationRecord
   # validates_inclusion_of :public, in: [true, false] # Strictly enforce boolean values for public
 
   #belongs_to :user # Gallery belongs to a User
-  has_many :media # Gallery has many Media items
+  has_many :media, dependent: :destroy # Gallery has many Media items
   has_one :cover_image, class_name: 'Medium', foreign_key: 'cover_image_id'
-  #has_one :cover_image, class_name: 'Medium', foreign_key: 'cover_image_id'  # Correct association
-  #has_one :medium,  foreign_key: 'cover_image_id'
-
+  has_one_attached :cover_image_file
 
   def to_s
     "#{Gallery.emoji} Gallery '#{title}'"
   end
 
-
   def cover_image_manhouse # since its not working
     Medium.find(cover_image_id) rescue nil
   end
-
-
 
 
   def self.emoji = '🖼️'
