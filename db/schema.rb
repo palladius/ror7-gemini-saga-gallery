@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_25_082239) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_25_084302) do
   create_table "galleries", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_25_082239) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_galleries_on_title", unique: true
   end
 
   create_table "media", force: :cascade do |t|
@@ -38,5 +39,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_25_082239) do
     t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["path", "gallery_id"], name: "index_media_on_path_and_gallery_id", unique: true
   end
 end
