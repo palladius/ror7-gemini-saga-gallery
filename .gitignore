@@ -41,3 +41,9 @@ db/development.sqlite3-wal
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+.git-privatize
+.gcloudconfig.yaml
+config/master.key
+_env_gaic.sh
+_env_gaic.py
+_env_gaic.rb

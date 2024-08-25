@@ -14,6 +14,9 @@ dev-old:
 	rake assets:precompile
 	rails s
 
+# TODO check if its different dev and prod -= when needed.
+credentials-edit:
+	rails credentials:edit
 
 import:
 	rake gallery:import_local_files_to_db

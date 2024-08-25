@@ -1,0 +1,86 @@
+== Common infos ==
+- Script Version: 0.9.6
+- Script Execution Date: 2024-08-25 19:22:16.261817
+- FileName: GOPR4094.JPG.gemini_scuba_annotation.txt
+- Gemini Model used: gemini-1.5-pro
+- Hostname: ricc-macbookpro3.roam.internal
+========================================
+PROMPT: Describe this image (from a Scuba Diving perspective):
+GEMINI ANSWER:
+The image shows a colorful nudibranch (likely from the Chromodoris genus given its vibrant blue, orange, and white coloration) on a coral reef. The image quality is a bit blurry, common in underwater photography due to factors like water movement and light diffusion.  The nudibranch is the focal point, positioned center-right. It's likely crawling on the reef, looking for food, which for this type of creature is usually sponges.  Surrounding the nudibranch is a mix of hard coral formations and some possible algae growth. The coral appears to be in relatively good health with various textures and some hints of other marine life in the background. 
+
+
+========================================
+PROMPT: Are there any fish/maritime life/animal/humans in the image? Give me a bulletpoint list of them, with cardinality before and description in parenthesis (eg "1 turtle (green, a bit blurred)", "3 triggerfish (one is a titan triggerfish with yellow and blue colors))
+GEMINI ANSWER:
+* 1 nudibranch (orange, yellow and blue, horizontal) 
+
+
+========================================
+PROMPT: How would you rate this image quality from 1 to 10? I'm thinking of blurring, and simple ability to see what's in it.
+GEMINI ANSWER:
+This image is quite blurry, especially the fish.  I'd give it a 3 or 4 out of 10. It's difficult to make out details, and the colors are somewhat muted due to the lack of sharpness. 
+
+
+========================================
+PROMPT: Would you consider this image worth keeping for me (I would say yes if there is a member of my family and/or there's a cool animal or fish, and the quality is not too bad)
+GEMINI ANSWER:
+Given your criteria, I'd say **yes**, this image is worth keeping. 
+
+Here's why:
+
+* **Cool animal:** The image features a colorful sea slug or nudibranch, which are often considered fascinating and beautiful creatures. 
+* **Quality:** While not perfectly sharp, the image quality isn't terrible. The colors are vibrant and the nudibranch is identifiable. 
+
+Unless you have many other, much clearer photos of nudibranchs, this one is worth holding onto! 
+
+
+========================================
+PROMPT: How would you rate the image RELEVANCE from 1 to 10? 10 would have a high quality, close shark or nudibranch, 7 a big fish in the distance and 1 just algae.
+GEMINI ANSWER:
+This image would be about a **9**. 
+
+Here's why:
+
+* **Subject:** The image clearly shows a nudibranch, which fits the criteria for a high score.
+* **Clarity:** While slightly blurry, the nudibranch is identifiable, and its colors are visible. 
+* **Composition:** The nudibranch is not perfectly centered, but it is a prominent element in the photo.
+
+The slight blurriness prevents it from being a perfect 10, which would require exceptional clarity and detail. 
+
+
+========================================
+PROMPT: What is the main subject of the image?
+GEMINI ANSWER:
+ The main subject is a brightly colored sea slug, orange, blue and white.  
+
+========================================
+PROMPT: Describe the colors and patterns present in the image.
+GEMINI ANSWER:
+The blurry image shows a reef with a colorful slug. The slug has a blue, yellow, orange, and white striped pattern on it. The coral around it is white and blurry. Behind the slug and coral is dark green and teal colors of the deeper water. 
+
+========================================
+PROMPT: Is there any text or writing visible in the image?
+GEMINI ANSWER:
+No, there is no text or writing visible in this image. 
+
+
+========================================
+PROMPT: Give me all the technicalities of the image you can get: height, width, B/W vs color, ..
+GEMINI ANSWER:
+The image's technical details are limited since it's not a digital file I can analyze. Here's what I can tell you:
+
+* **Color:** The image is in color.
+* **Type:**  It appears to be a photograph, likely taken underwater.
+
+I cannot determine the following without more information:
+
+* **Height & Width:**  These are measured in pixels for digital images. 
+* **File Size:**  Dependent on file format and compression.
+* **File Format:**  Could be JPG, PNG, etc.
+* **Resolution:** Measured in DPI (dots per inch) or PPI (pixels per inch).
+
+Let me know if you have any other questions! 
+
+
+========================================
