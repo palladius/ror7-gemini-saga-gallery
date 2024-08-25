@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  path: MyString
+  caption: MyText
+  media_type: MyString
+  gallery_id: 1
+  gemini_relevance: 1.5
+  gemini_quality: 1.5
+  gemini_description: MyText
+  gemini_text: MyText
+  file_size: 1
+  dimensions: MyString
+  original_filename: MyString
+  user_id: 1
+
+two:
+  title: MyString
+  path: MyString
+  caption: MyText
+  media_type: MyString
+  gallery_id: 1
+  gemini_relevance: 1.5
+  gemini_quality: 1.5
+  gemini_description: MyText
+  gemini_text: MyText
+  file_size: 1
+  dimensions: MyString
+  original_filename: MyString
+  user_id: 1

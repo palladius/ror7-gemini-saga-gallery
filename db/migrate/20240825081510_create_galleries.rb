@@ -3,7 +3,7 @@ class CreateGalleries < ActiveRecord::Migration[7.2]
     create_table :galleries do |t|
       t.string :title
       t.text :description
-      t.boolean :public
+      t.boolean :public, default: true
       t.integer :cover_image_id
       t.integer :user_id
 

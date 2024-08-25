@@ -1,0 +1,82 @@
+<%= form_with(model: medium) do |form| %>
+  <% if medium.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+
+      <ul>
+        <% medium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :path, style: "display: block" %>
+    <%= form.text_field :path %>
+  </div>
+
+  <div>
+    <%= form.label :caption, style: "display: block" %>
+    <%= form.text_area :caption %>
+  </div>
+
+  <div>
+    <%= form.label :media_type, style: "display: block" %>
+    <%= form.text_field :media_type %>
+  </div>
+
+  <div>
+    <%= form.label :gallery_id, style: "display: block" %>
+    <%= form.number_field :gallery_id %>
+  </div>
+
+  <div>
+    <%= form.label :gemini_relevance, style: "display: block" %>
+    <%= form.text_field :gemini_relevance %>
+  </div>
+
+  <div>
+    <%= form.label :gemini_quality, style: "display: block" %>
+    <%= form.text_field :gemini_quality %>
+  </div>
+
+  <div>
+    <%= form.label :gemini_description, style: "display: block" %>
+    <%= form.text_area :gemini_description %>
+  </div>
+
+  <div>
+    <%= form.label :gemini_text, style: "display: block" %>
+    <%= form.text_area :gemini_text %>
+  </div>
+
+  <div>
+    <%= form.label :file_size, style: "display: block" %>
+    <%= form.number_field :file_size %>
+  </div>
+
+  <div>
+    <%= form.label :dimensions, style: "display: block" %>
+    <%= form.text_field :dimensions %>
+  </div>
+
+  <div>
+    <%= form.label :original_filename, style: "display: block" %>
+    <%= form.text_field :original_filename %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
