@@ -1,7 +1,8 @@
 ## Changelog
 
 ```
-2024-08-25 0.4.6 [ops] Adding Cloud Build (still not functional) and `GAIC` functionality from `sakura`, mostly for secrets.
+2024-08-25 0.4.8 [ops] Cloud Build still WIP but nearly there. Fixing Dockerfile from CB log :)
+2024-08-25 0.4.7 [ops] Adding Cloud Build (still not functional) and `GAIC` functionality from `sakura`, mostly for secrets.
 2024-08-25 0.4.6 Reducing pictures (Mac is super slow!)
 2024-08-25 0.4.5 Addiomng pages Controllers
 2024-08-25 0.4.4 Gemini is Styling layout/header/footer.

@@ -28,3 +28,6 @@ destroy-and-reimport-YES-I_AM_SURE:
 	rake gallery:import_local_files_to_db
 	echo Rebuilding assets..
 	rake assets:precompile
+
+docker-build:
+	docker build .

@@ -24,11 +24,13 @@ substitutions:
   _MY_REPO_NAME: 'ror7-gemini-saga-gallery' # This ALREADY EXISTS!
   _APP_NAME: 'saga-gallery'
   # Create this with script `iac/01-create-Artifact-Repo.sh`
-  #_FINAL_AR_IMAGE_WITHOUT_TAG: "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}"
+  _FINAL_AR_IMAGE_WITHOUT_TAG: "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}/${_APP_NAME}123"
   # OLD AND USELESS
-  #MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
+  _MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
   #_PROJECT_ID: puffin-tours
   #SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
+  # Without AppName
+  _SKAFFOLD_DEFAULT_REPO: "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}"
 images:
 - "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:latest"
 - "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:sha-$SHORT_SHA"
@@ -56,22 +58,23 @@ steps:
 
 # First I build a docker latest version..
 - name: 'gcr.io/cloud-builders/docker'
-  id: Docker Build - to CB_LATEST # might be error prone vs the one create from computer
+  id: Docker Build - to LATEST
   args: ['build', '-t', "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest", '.']
   env:
     - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
+
 # Then I tag it with another so it survives multiple builds..
 - name: 'gcr.io/cloud-builders/docker'
-  id: Tag latest to vVERSION
+  id: Tag latest to latest and sha-SHA - (TODO vVERSION scriptically)
   args:
     - 'tag'
     - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
-#    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
+    - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:sha-$SHORT_SHA"
   env:
   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
 
 - name: 'gcr.io/cloud-builders/docker'
-  id: Tag from SHA to VERSION - proviamo con Docker
+  id: Tag from SHA to VERSION - lets try with Docker
   entrypoint: bash
   args:
   - bin/autotag.sh

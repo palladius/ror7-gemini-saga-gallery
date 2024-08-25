@@ -15,6 +15,8 @@ echo '2. fixed    _FINAL_AR_IMAGE_WITHOUT_TAG:' "europe-west1-docker.pkg.dev/ror
 
 # To be submitted by Riccardo locally with hydrated vars which are NOT available solely on gihtub
 echodo gcloud --project "$PROJECT_ID" builds submit --config=cloudbuild.yaml \
-    --substitutions=MESSAGGIO_OCCASIONALE="bypassed by CLI bash in $0 v$VER" \
-    --substitutions=FINAL_AR_IMAGE_WITHOUT_TAG="$FINAL_AR_IMAGE_WITHOUT_TAG" \
-    --substitutions=FINAL_AR_IMAGE_LATEST="$FINAL_AR_IMAGE_LATEST"
+    --substitutions=\
+_MESSAGGIO_OCCASIONALE="bypassed by CLI bash in $0 v$VER",\
+_FINAL_AR_IMAGE_WITHOUT_TAG="$FINAL_AR_IMAGE_WITHOUT_TAG",\
+_FINAL_AR_IMAGE_LATEST="$FINAL_AR_IMAGE_LATEST"
+
