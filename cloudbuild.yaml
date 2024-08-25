@@ -17,16 +17,15 @@ options:
   substitution_option: 'ALLOW_LOOSE'
 substitutions:
   #_ARTIFACT_REPO_FULL_PATH: ${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/myapp
-
   # GOB doesnt allow me to pass ENVs to CB so I need to do this :/
   # or get it from SECRET MANAGER :) https://cloud.google.com/build/docs/securing-builds/use-secrets
-  _REGION: us-central1
-  _GCP_REGION: us-central1
-  _REPO_NAME: ror7-gemini-saga-gallery
-  _APP_NAME: saga-gallery
+  REGION: us-central1
+  GCP_REGION: us-central1
+  REPO_NAME: ror7-gemini-saga-gallery
+  APP_NAME: saga-gallery
   #_PROJECT_ID: puffin-tours
-  _SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
-  _MESSAGGIO_OCCASIONALE: on cloud build configured in aug24 and copied from PuffinTours
+  SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
+  MESSAGGIO_OCCASIONALE: on cloud build configured in aug24 and copied from PuffinTours
 images:
 - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
 - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
