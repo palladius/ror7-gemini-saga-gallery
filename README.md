@@ -11,6 +11,12 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment instructions
 
+## Logo
+
+Still WIP:
+
+gemini_no_saga_logo.jpg
+
 ## Reproducing CLI Rails steps
 
 ```
