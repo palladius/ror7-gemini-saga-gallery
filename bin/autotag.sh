@@ -35,9 +35,10 @@ set -x
 # docker images | grep puffin
 
 echo '🚗🏷️ [AutoTag] Tagging and pushing..'
-docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$GIT_SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION" ||
-    docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION" ||
-        echo I hope either works..
+docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$GIT_SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION"
+
+    # docker tag "$FINAL_AR_IMAGE_WITHOUT_TAG:sha-$SHORT_SHA" "$FINAL_AR_IMAGE_WITHOUT_TAG:v$APP_VERSION" ||
+    #     echo I hope either works..
 docker push "$FINAL_AR_IMAGE_WITHOUT_TAG" --all-tags
 
 

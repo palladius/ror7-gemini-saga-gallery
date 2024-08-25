@@ -1,6 +1,7 @@
 ## Changelog
 
 ```
+2024-08-25 0.4.10[ops] AutoTag Finally works!!
 2024-08-25 0.4.10[ops] Still fixing AutoTag - apparently SHORT_SHA is broken.
 2024-08-25 0.4.9 [ops] AutoTag: fixing autotag.sh with proper ENVs
 2024-08-25 0.4.8 [ops] Cloud Build still WIP but nearly there. Fixing Dockerfile from CB log :)
