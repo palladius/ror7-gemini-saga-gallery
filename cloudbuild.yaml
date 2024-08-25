@@ -28,8 +28,8 @@ substitutions:
   #SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
   #MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
 images:
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
+- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_APP_NAME}:latest"
+- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_APP_NAME}:sha-$SHORT_SHA"
 
 ################################################################################
 # TODO(ricc): enable availableSecrets as below once Cloud build is able to push again
