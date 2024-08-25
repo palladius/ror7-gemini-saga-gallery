@@ -18,6 +18,11 @@ class Medium < ApplicationRecord
     attachable.variant :middle, resize_to_limit: [800, 800]
   end
 
+
+  def caption
+    @caption || 'Caption coming'
+  end
+
   # model
   def to_s = "#{Medium.emoji} Medium '#{title}'"
   def thumbnail = self.medium_file.variant :thumbnail

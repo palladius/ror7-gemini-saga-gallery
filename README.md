@@ -28,7 +28,7 @@ echo 3.3.4 > .ruby-version
 bundle install
 
 ####################
-# Scaffolds
+# Scaffolds, models, controllers
 ####################
 
 # Gallery
@@ -43,6 +43,9 @@ rails g scaffold medium title:string path:string caption:text gemini_relevance:f
 rails g scaffold Medium title:string path:string caption:text media_type:string gallery_id:integer \
   gemini_relevance:float gemini_quality:float gemini_description:text gemini_text:text \
   file_size:integer dimensions:string original_filename:string user_id:integer
+
+# v0.4.5
+rails generate controller Pages home about graphs contact
 
 
 

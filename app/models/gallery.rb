@@ -9,12 +9,18 @@ class Gallery < ApplicationRecord
 
   #belongs_to :user # Gallery belongs to a User
   has_many :media # Gallery has many Media items
-  has_one :cover_image, class_name: 'Medium', foreign_key: 'cover_image_id' # Optional, if you want to explicitly define the cover image association
-
+  has_one :cover_image, class_name: 'Medium', foreign_key: 'cover_image_id'
+  #has_one :cover_image, class_name: 'Medium', foreign_key: 'cover_image_id'  # Correct association
+  #has_one :medium,  foreign_key: 'cover_image_id'
 
 
   def to_s
     "#{Gallery.emoji} Gallery '#{title}'"
+  end
+
+
+  def cover_image_manhouse # since its not working
+    Medium.find(cover_image_id) rescue nil
   end
 
 

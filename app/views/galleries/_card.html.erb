@@ -1,0 +1,32 @@
+<%
+  # There's a bug and the association in the model is not working so I created one at manhouse..
+  cover_image =   gallery.cover_image_manhouse  # can be null
+  medium_file_path = cover_image.medium_file.variant(:thumbnail)
+%>
+<div class="gallery-card">
+
+  <!-- code - if it worked! -->
+  <% if (gallery.cover_image.attached? rescue false) %>
+    <%= link_to(image_tag(gallery.cover_image), gallery) %>
+  <% else %>
+    <div class="bg-gray-300 h-64 flex items-center justify-center">
+      <p class="text-gray-500">No Cover Image (right one)</p>
+    </div>
+  <% end %>
+
+<!-- code - with Riccardo patchwork -->
+  <% if gallery.cover_image_manhouse %>
+    <%= link_to image_tag(medium_file_path), gallery %>
+  <% else %>
+    <div class="bg-gray-300 h-64 flex items-center justify-center">
+      <p class="text-gray-500">No Cover Image (manhouse)</p>
+    </div>
+  <% end %>
+
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-2"><%= gallery.title %></h2>
+    <% if gallery.description.present? %>
+      <p class="text-gray-600"><%= gallery.description %></p>
+    <% end %>
+  </div>
+</div>

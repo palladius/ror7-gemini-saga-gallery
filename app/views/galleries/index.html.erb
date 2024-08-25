@@ -2,15 +2,21 @@
 
 <% content_for :title, "Galleries" %>
 
-<h1>Galleries</h1>
+<%= h1("Galleries") %>
 
-<div id="galleries">
+<div id="galleries" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> <%# Grid layout %>
   <% @galleries.each do |gallery| %>
-    <%= render gallery %>
-    <p>
-      <%= link_to "Show this gallery", gallery %>
-    </p>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden"> <%# Card-like styling for each gallery %>
+      <%#= render gallery %>
+      <%= render 'card', gallery: gallery %> <%# Render the gallery card partial %>
+
+      <div class="p-4">
+        <%#= render 'shared/actions', object: gallery %>
+        <%#= render 'shared/actions', object: gallery %> <%# Render the actions partial %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New gallery", new_gallery_path %>
+<%= link_to "New gallery", new_gallery_path,
+            class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block" %> <%# Style the "New gallery" button %>

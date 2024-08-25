@@ -1,5 +1,6 @@
 
 dev-troubleshot-js:
+	rake assets:precompile
 	bin/dev
 
 dev-old:

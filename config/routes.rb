@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "pages/home" # also index
+  get "pages/about"
+  get "pages/graphs"
+  get "pages/contact"
+
   resources :media
   resources :galleries
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,5 +18,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root "galleries#index"
+  #root "galleries#index"
+  root 'pages#home'
 end

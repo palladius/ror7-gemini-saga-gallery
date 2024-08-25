@@ -9,11 +9,11 @@
 %>
 <div class="mt-4 flex justify-between">
   <% if can? :update, object %>
-    <%= link_to "Edit this #{object_type}", [:edit, object],
+    <%= link_to "Edit #{object_type}", [:edit, object],
                 class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   <% end %>
-    <%= link_to "[POLIOMORPHIC] Back to #{object.class.emoji} #{plural_object}", send("#{plural_object}_path"),
-                class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" %>
+    <%= link_to "⏪ to #{object.class.emoji} #{plural_object}", send("#{plural_object}_path"),
+                class: "bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded" %>
 
   <% if can? :destroy, object %> <%# Check if the user can destroy the object %>
     <%= button_to "💣 Destroy this #{object_type}", object, method: :delete,

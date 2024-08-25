@@ -51,6 +51,7 @@ namespace :gallery do
           if m.medium_file.attached? && m.medium_file.image?
             m.dimensions = "#{m.medium_file.metadata[:width]}x#{m.medium_file.metadata[:height]}"
             m.file_size = m.medium_file.blob.byte_size
+            m.caption = "Blah blah blah (TODO change me) - #{m.medium_file.blob.byte_size}"
           end
 
         end
