@@ -20,14 +20,16 @@ substitutions:
 
   # GOB doesnt allow me to pass ENVs to CB so I need to do this :/
   # or get it from SECRET MANAGER :) https://cloud.google.com/build/docs/securing-builds/use-secrets
-  _REGION: europe-west1
-  _GCLOUD_REGION: europe-west1
+  _REGION: us-central1
+  _GCP_REGION: us-central1
+  _REPO_NAME: ror7-gemini-saga-gallery
+  _APP_NAME: saga-gallery
   #_PROJECT_ID: puffin-tours
   _SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
   _MESSAGGIO_OCCASIONALE: on cloud build configured in aug24 and copied from PuffinTours
 images:
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours:latest"
-- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours:sha-$SHORT_SHA"
+- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
+- "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
 
 ################################################################################
 # TODO(ricc): enable availableSecrets as below once Cloud build is able to push again
@@ -48,17 +50,18 @@ steps:
 # First I build a docker latest version..
 - name: 'gcr.io/cloud-builders/docker'
   id: Docker Build - to CB_LATEST # might be error prone vs the one create from computer
-  args: ['build', '-t', "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours:latest", '.']
+  args: ['build', '-t', "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest", '.']
 
 # Then I tag it with another so it survives multiple builds..
 - name: 'gcr.io/cloud-builders/docker'
   id: Tag latest to vVERSION
   args:
     - 'tag'
-    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours:latest"
-    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours:sha-$SHORT_SHA"
-  #env:
-  #- 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
+    - "${GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
+#    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
+#    - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
+  env:
+  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
 
 - name: 'gcr.io/cloud-builders/docker'
   id: Tag from SHA to VERSION - proviamo con Docker
@@ -79,8 +82,8 @@ steps:
 #   - 'myapp-latest'
 #   - '--image'
 #   # TODO(ricc): check in the future whsat works best: tag to latest vs to specific SHA.
-#   # "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours-cb:sha-$SHORT_SHA"
-#   - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/puffintours-cb:latest"
+#   # "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}-cb:sha-$SHORT_SHA"
+#   - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}-cb:latest"
 #   - '--region'
 #   - "${_REGION}"
 #   - '--platform'
@@ -101,6 +104,6 @@ steps:
   - 'DATABASE_NAME=$_DATABASE_NAME'
   - 'DATABASE_USER=$_DATABASE_USER'
   - 'DATABASE_PASS=$_DATABASE_PASS'
-#  - 'GCLOUD_REGION=$GCLOUD_REGION'
+#  - 'GCP_REGION=$GCP_REGION'
 #  - 'REGION=$REGION'
 
