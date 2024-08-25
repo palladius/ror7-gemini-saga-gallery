@@ -24,13 +24,17 @@ export GIT_COMMIT_SHA="$(git rev-parse HEAD)" # big commit
 export GIT_SHORT_SHA="${GIT_COMMIT_SHA:0:7}" # first 7 chars: Riccardo reproducing what CB does for me.
 export APP_VERSION="$(cat VERSION)"
 
+echo "🚗🏷️ [AutoTag] GIT_SHORT_SHA=$GIT_SHORT_SHA (had a bug in v0.4.9)"
+echo "🚗🏷️ [AutoTag] SHORT_SHA=$SHORT_SHA"
+
 set -x
 
 # echo '1. Vediamo che immagini DHH-iane ci siano (BEFORE)..'
 # docker images | grep puffin
 
 echo '🚗🏷️ [AutoTag] Tagging and pushing..'
-docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$GIT_SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION"
+docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$GIT_SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION" ||
+    echo Might be a problem with GIT_SHORT_SHA
 docker push "$SKAFFOLD_DEFAULT_REPO" --all-tags
 
 

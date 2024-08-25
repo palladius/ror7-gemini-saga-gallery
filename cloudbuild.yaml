@@ -34,8 +34,8 @@ substitutions:
   # Without AppName
   _SKAFFOLD_DEFAULT_REPO: "${_GCP_REGION}-docker.pkg.dev/${PROJECT_ID}/${_MY_REPO_NAME}"
 images:
-- "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:latest"
-- "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:sha-$SHORT_SHA"
+#- "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:latest"
+#- "europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:sha-$SHORT_SHA"
 #- "$_FINAL_AR_IMAGE_LATEST"
 - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
 - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:sha-$SHORT_SHA"
@@ -84,6 +84,7 @@ steps:
   - 'PROJECT_ID=$PROJECT_ID'
   - 'APP_NAME=$_APP_NAME'
   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
+  - 'SHORT_SHA:$SHORT_SHA'
 
 # # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
 # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
