@@ -25,7 +25,7 @@ substitutions:
   APP_NAME: saga-gallery
   #_PROJECT_ID: puffin-tours
   SKAFFOLD_DEFAULT_REPO: 'europe-west1-docker.pkg.dev/puffin-tours/puffintours'
-  MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
+  #MESSAGGIO_OCCASIONALE: 'on cloud build configured in aug24 and copied from PuffinTours'
 images:
 - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:latest"
 - "${_REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${APP_NAME}:sha-$SHORT_SHA"
