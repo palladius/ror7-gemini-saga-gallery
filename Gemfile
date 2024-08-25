@@ -2,6 +2,15 @@ source "https://rubygems.org"
 
 ruby '3.3.4' # on derek
 
+#############################################
+# Riccardo
+# sqlite for dev
+group :development, :test do
+  gem 'sqlite3', '~> 2.0'           # 2.0.4 is latest , '~> 1.4'
+end
+# /Riccardo
+#############################################
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]

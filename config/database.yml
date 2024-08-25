@@ -26,8 +26,15 @@ default: &default
 
 
 development:
-  <<: *default
-  database: ror7_gemini_saga_gallery_development
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+# never gonna use it but keeping for migration purposes..
+# dev-on-pg:
+#   <<: *default
+#   database: ror7_gemini_saga_gallery_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

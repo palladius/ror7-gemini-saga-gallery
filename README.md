@@ -25,9 +25,10 @@ bundle install
 # Scaffolds
 ####################
 
-# Gallery first
+# Gallery
 rails generate scaffold Gallery title:string description:text public:boolean cover_image_id:integer user_id:integer
 
+# Image or video: Medium
 # Create Image - which could both on DB or on File (with utlities to brings 1 <--> 2)
 # Riccardo
 rails g scaffold medium title:string path:string caption:text gemini_relevance:float gemini_quality:float gemini_description:text \
@@ -36,4 +37,12 @@ rails g scaffold medium title:string path:string caption:text gemini_relevance:f
 rails g scaffold Medium title:string path:string caption:text media_type:string gallery_id:integer \
   gemini_relevance:float gemini_quality:float gemini_description:text gemini_text:text \
   file_size:integer dimensions:string original_filename:string user_id:integer
+
+
+
+#####################
+# tasks
+##################
+rails generate task gallery import_local_files_to_db
+
 ```
