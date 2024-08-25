@@ -23,7 +23,8 @@ set -u # fails at first undefined VAR (!!)
 echodo gcloud artifacts repositories create "$MY_REPO_NAME" \
     --location "$GCP_REGION" \
     --repository-format='docker' \
-    --description='Repo for RoR Gemini Saga Gallery super-duper docker repo'
+    --description='Repo for RoR Gemini Saga Gallery super-duper docker repo' \
+    --labels 'app-type=ror,app=rails,env=prod'
 
 
 

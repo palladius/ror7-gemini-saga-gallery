@@ -15,6 +15,8 @@ options:
   #machineType: 'E2_HIGHCPU_32'
   machineType: 'N1_HIGHCPU_32'
   substitution_option: 'ALLOW_LOOSE'
+  # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values#dynamic_substitutions
+  dynamicSubstitutions: true
 substitutions:
   #_ARTIFACT_REPO_FULL_PATH: ${_REGION}-docker.pkg.dev/${PROJECT_ID}/puffintours/myapp
   # GOB doesnt allow me to pass ENVs to CB so I need to do this :/

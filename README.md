@@ -1,5 +1,7 @@
 # README
 
+Self: https://github.com/palladius/ror7-gemini-saga-gallery/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
