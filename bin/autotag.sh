@@ -34,7 +34,8 @@ set -x
 
 echo '🚗🏷️ [AutoTag] Tagging and pushing..'
 docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$GIT_SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION" ||
-    echo Might be a problem with GIT_SHORT_SHA
+    docker tag "$SKAFFOLD_DEFAULT_REPO:sha-$SHORT_SHA" "$SKAFFOLD_DEFAULT_REPO:v$APP_VERSION" ||
+        echo I hope either works..
 docker push "$SKAFFOLD_DEFAULT_REPO" --all-tags
 
 

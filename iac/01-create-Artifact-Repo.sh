@@ -20,13 +20,17 @@ set -u # fails at first undefined VAR (!!)
 ########################
 # Add your code here
 ########################
-echodo gcloud artifacts repositories create "$MY_REPO_NAME" \
+
+# Create AR docker target for CB to succeed:
+gcloud artifacts repositories create "$MY_REPO_NAME" \
     --location "$GCP_REGION" \
     --repository-format='docker' \
     --description='Repo for RoR Gemini Saga Gallery super-duper docker repo' \
     --labels 'app-type=ror,app=rails,env=prod'
 
-
+# Run the following command to configure gcloud as the credential helper for the Artifact Registry domain associated with this repository's location:
+gcloud auth configure-docker \
+    "$GCP_REGION-docker.pkg.dev"
 
 
 
