@@ -1,4 +1,16 @@
+<% file = medium.medium_file %>
 <div id="<%= dom_id medium %>">
+
+  <ul>
+    <li>
+      <% if file.representable? %>
+        <%= image_tag file.representation(resize_to_limit: [100, 100]) %>
+      <% else %>
+      Not represe      ntable
+      <% end %>
+    </li>
+</ul>
+
   <p>
     <strong>Title:</strong>
     <%= medium.title %>
@@ -21,7 +33,7 @@
 
   <p>
     <strong>Gallery:</strong>
-    <%= medium.gallery_id %>
+    <%= link_to medium.gallery, medium.gallery %>
   </p>
 
   <p>

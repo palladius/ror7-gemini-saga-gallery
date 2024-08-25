@@ -8,3 +8,42 @@
 
   <%= button_to "Destroy this gallery", @gallery, method: :delete %>
 </div>
+
+<h2>Testing Carousel</h2>
+
+  <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+  </div>
+
+<h2>Lightbox test</h2>
+
+  from https://www.stimulus-components.com/docs/stimulus-lightbox :
+
+  <% @medium = @gallery.media.first %>
+  <div data-controller="lightbox" data-lightbox-options-value='{"index": 2}'>
+
+  <a href="img/img1.jpg">
+      <img src="img/img1.jpg" alt="" />
+    </a>
+
+
+
+
+
+    <a href="img/img2.jpg">
+    <%= link_to image_tag(@medium.medium_file), data: {
+      controller: 'lightbox',
+      lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
+  } %>
+
+      <img src="img/img2.jpg" alt="" />
+    </a>
+
+    <a href="img/img3.jpg">
+      <img src="img/img3.jpg" alt="" />
+    </a>
+  </div>

@@ -35,3 +35,4 @@
 /config/master.key
 .echodo_history
 .ondir.was.here.touch
+.rake_tasks~

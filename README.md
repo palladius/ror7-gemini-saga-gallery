@@ -45,4 +45,14 @@ rails g scaffold Medium title:string path:string caption:text media_type:string 
 ##################
 rails generate task gallery import_local_files_to_db
 
+
+
+#####################
+# javascript
+######################
+# install https://www.stimulus-components.com/docs/stimulus-lightbox
+bin/importmap pin @stimulus-components/lightbox
+# install https://www.stimulus-components.com/docs/stimulus-carousel
+bin/importmap pin @stimulus-components/carousel
+# .. and follow all the instructions :)
 ```

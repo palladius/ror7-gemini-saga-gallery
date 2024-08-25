@@ -12,5 +12,19 @@ class Medium < ApplicationRecord
   belongs_to :gallery
   # If you have a User model and want to track ownership
   # belongs_to :user
+  #has_one_attached :medium_file # activestorage
+  has_one_attached :medium_file do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+  end
+
+
+  def to_s
+    "#{Medium.emoji} Medium '#{title}'"
+  end
+
+
+
+
+  def self.emoji = '🖼️📹'
 
 end

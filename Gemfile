@@ -8,6 +8,8 @@ ruby '3.3.4' # on derek
 group :development, :test do
   gem 'sqlite3', '~> 2.0'           # 2.0.4 is latest , '~> 1.4'
 end
+#gem 'pathname'
+gem "image_processing", ">= 1.2" # ActiveStorage on steroids
 # /Riccardo
 #############################################
 
