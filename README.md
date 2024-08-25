@@ -50,9 +50,15 @@ rails generate task gallery import_local_files_to_db
 #####################
 # javascript
 ######################
-# install https://www.stimulus-components.com/docs/stimulus-lightbox
+# install https://www.stimulus-components.com/docs/stimulus-lightbox for gallery
 bin/importmap pin @stimulus-components/lightbox
-# install https://www.stimulus-components.com/docs/stimulus-carousel
+# install https://www.stimulus-components.com/docs/stimulus-carousel for gallery
 bin/importmap pin @stimulus-components/carousel
+# install https://www.stimulus-components.com/docs/stimulus-timeago as its easy to debug JS with this..
+bin/importmap pin @stimulus-components/timeago
 # .. and follow all the instructions :)
+
+# it doesnt work, lets add Tailwind!  => https://tailwindcss.com/docs/guides/ruby-on-rails
+bin/bundle add tailwindcss-rails
+bin/rails tailwindcss:install
 ```

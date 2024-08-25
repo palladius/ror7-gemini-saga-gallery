@@ -1,49 +1,58 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @gallery %>
-
+<!-- original -->
 <div>
   <%= link_to "Edit this gallery", edit_gallery_path(@gallery) %> |
   <%= link_to "Back to galleries", galleries_path %>
-
   <%= button_to "Destroy this gallery", @gallery, method: :delete %>
 </div>
+<!-- Gemini 2nd trial - generic -->
+<%= render 'shared/actions', object: @gallery %>
 
-<h2>Testing Carousel</h2>
+<div class='prove_varie' >
+  <h2>Carousel partial (Gemini)</h2>
 
-  <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
+    <%= render 'gallery_carousel', gallery: @gallery %>
+
+
+  <h2>GRID partial</h2>
+
+    <%= render 'gallery_grid', gallery: @gallery %>
+
+
+
+  <h2>Testing Carousel - helloworld (doesnt work)</h2>
+
+    <div data-controller="carousel" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
     </div>
-  </div>
 
-<h2>Lightbox test</h2>
+  <h2>Lightbox test</h2>
 
-  from https://www.stimulus-components.com/docs/stimulus-lightbox :
+    from https://www.stimulus-components.com/docs/stimulus-lightbox :
 
-  <% @medium = @gallery.media.first %>
-  <div data-controller="lightbox" data-lightbox-options-value='{"index": 2}'>
+    <% @medium = @gallery.media.first %>
+    <div data-controller="lightbox" >
 
-  <a href="img/img1.jpg">
-      <img src="img/img1.jpg" alt="" />
-    </a>
+      <a href="img/img1.jpg">
+        <img src="img/img1.jpg" alt="" />
+      </a>
+      <a href="img/img2.jpg">
+      <%= link_to( image_tag(@medium.medium_file), data: {
+            controller: 'lightbox',
+            lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
+        }
+        )  if (@medium.medium_file rescue nil) %>
+        <img src="img/img2.jpg" alt="" />
+      </a>
 
-
-
-
-
-    <a href="img/img2.jpg">
-    <%= link_to image_tag(@medium.medium_file), data: {
-      controller: 'lightbox',
-      lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
-  } %>
-
-      <img src="img/img2.jpg" alt="" />
-    </a>
-
-    <a href="img/img3.jpg">
-      <img src="img/img3.jpg" alt="" />
-    </a>
-  </div>
+      <a href="img/img3.jpg">
+        <img src="img/img3.jpg" alt="" />
+      </a>
+    </div>
+</div>

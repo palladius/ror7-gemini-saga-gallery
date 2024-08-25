@@ -13,6 +13,7 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -21,6 +22,18 @@
     <a href='/media'>Media</a>
   </header>
   <body>
-    <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
   </body>
+  <footer>
+    <hr/>
+    <p>
+      Stimulus 1.0.0 was released <time data-controller="timeago" data-timeago-datetime-value="2018-01-30T09:00"></time>.
+    </p>
+    <p>
+      Riccardo's <%= APP_NAME %> v<%= APP_VERSION %> was released <time data-controller="timeago" data-timeago-datetime-value="2024-08-25T11:00"></time>.
+    </p>
+  </footer>
+
 </html>

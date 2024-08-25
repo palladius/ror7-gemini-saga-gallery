@@ -14,17 +14,17 @@ class Medium < ApplicationRecord
   # belongs_to :user
   #has_one_attached :medium_file # activestorage
   has_one_attached :medium_file do |attachable|
-    attachable.variant :thumb, resize_to_limit: [200, 200]
+    attachable.variant :thumbnail, resize_to_limit: [200, 200]
+    attachable.variant :middle, resize_to_limit: [800, 800]
   end
 
-
-  def to_s
-    "#{Medium.emoji} Medium '#{title}'"
-  end
-
-
+  # model
+  def to_s = "#{Medium.emoji} Medium '#{title}'"
+  def thumbnail = self.medium_file.variant :thumbnail
+  def middle_thumbnail = self.medium_file.variant :thumbnail
 
 
+  # class methods
   def self.emoji = '🖼️📹'
 
 end

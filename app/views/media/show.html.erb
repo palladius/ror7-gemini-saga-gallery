@@ -1,11 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @medium %>
-
+<%= render 'shared/actions', object: @medium %>
 <div>
   <%= link_to "Edit this medium", edit_medium_path(@medium) %> |
   <%= link_to "Back to media", media_path %>
-
   <%= button_to "Destroy this medium", @medium, method: :delete %>
 </div>
 
@@ -14,20 +13,6 @@
 
 <%= link_to image_tag(@medium.medium_file), data: {
     controller: 'lightbox',
-    lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
+#    lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
+    lightbox_src: url_for(@medium.thumbnail) # Or any other way to get the image URL
 } %>
-
-
-<style>
-.image-container {
-  width: 100%; /* Or set a specific width if needed */
-  max-width: 640px; /* Limit the maximum width */
-  overflow: hidden; /* Hide any overflow beyond the container */
-}
-
-.image-container img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Fit the image within the container while preserving aspect ratio */
-}
-</style>
