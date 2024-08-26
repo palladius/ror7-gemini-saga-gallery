@@ -17,7 +17,14 @@ Things you may want to cover:
 
 Still WIP:
 
-gemini_no_saga_logo.jpg
+Add to github README this file: https://github.com/palladius/ror7-gemini-saga-gallery/blob/main/app/assets/images/gemini_no_saga_logo2.jpg
+
+[![Project Logo](https://github.com/palladius/ror7-gemini-saga-gallery/blob/main/app/assets/images/gemini_no_saga_logo2.jpg)](https://github.com/palladius/ror7-gemini-saga-gallery/)
+
+## TODOs
+
+* transform the code into a GCF and apply to my OLD and NEW pictures with a trigger `OnGcsFileCreate()`
+
 
 ## Reproducing CLI Rails steps
 
