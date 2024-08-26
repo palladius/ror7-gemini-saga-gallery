@@ -145,7 +145,7 @@ steps:
   args:
   - 'run'
   - 'deploy'
-  - 'cbyaml-${_APP_NAME}-dev'
+  - '${_APP_NAME}-cbyaml-dev'
   - '--image'
   - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
   - '--region'
