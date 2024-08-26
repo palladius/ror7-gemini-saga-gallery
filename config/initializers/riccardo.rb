@@ -7,9 +7,11 @@ d automatically (removing blurred ones, etc..)"
 # constant start for CRun..
 RAILS_MASTER_KEY = ENV.fetch('RAILS_MASTER_KEY', nil).to_s
 SECRET_KEY_BASE = ENV.fetch('SECRET_KEY_BASE', nil).to_s
+GcsBucket = "ricc-public-saga-gallery-#{Rails.env}"
 
 def cutey_finestrella
   puts("🖼️ "*40)
+  puts("🖼️🌞 GcsBucket:   #{GcsBucket}")
   puts("🖼️🌞 APP_NAME:               #{ENV.fetch 'APP_NAME', nil}")
   puts("🖼️🌞 RAILS_ENV:              #{ENV.fetch 'RAILS_ENV', nil}")
   puts("🖼️🌞 Rails.env:              #{Rails.env}")

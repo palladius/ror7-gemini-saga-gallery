@@ -11,6 +11,7 @@ end
 gem "image_processing", ">= 1.2" # ActiveStorage on steroids
 gem "tailwindcss-rails", "~> 2.7"
 gem "foreman", "~> 0.88.1" # for the sweet bin/dev to work and debug JS :)
+gem 'google-cloud-storage'
 # /Riccardo
 #############################################
 
@@ -24,7 +25,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwires SPA-like page accelerator
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

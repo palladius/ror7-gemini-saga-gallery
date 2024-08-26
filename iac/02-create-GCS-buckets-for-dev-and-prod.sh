@@ -20,10 +20,10 @@ set -u # fails at first undefined VAR (!!)
 ########################
 # Add your code here
 ########################
-# echo $BUCKET_DEV
-# echo $BUCKET_PROD
+yellow $BUCKET_DEV
+yellow $BUCKET_PROD
 
-echodo gsutil mb -l eu "$BUCKET_DEV"  # created in US :/
+echodo gsutil mb -l eu "$BUCKET_DEV"  # created in EU :/
 echodo gsutil mb -l eu "$BUCKET_PROD" # this is in EU
 echodo gcloud storage buckets add-iam-policy-binding "$BUCKET_DEV"  --member=allUsers --role=roles/storage.objectViewer
 echodo gcloud storage buckets add-iam-policy-binding "$BUCKET_PROD" --member=allUsers --role=roles/storage.objectViewer
