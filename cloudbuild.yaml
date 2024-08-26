@@ -120,8 +120,9 @@ steps:
   - '--platform'
   - 'managed'
   - '--allow-unauthenticated'
-  - '--set-env-vars="RAILS_MASTER_KEY=$_RAILS_MASTER_KEY"'
-  - '--set-env-vars="RAILS_ENV=development"'
+  - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
+  - '--set-env-vars=RAILS_ENV=development'
+  - '--set-env-vars=MESSAGGIO_OCCASIONALE="problem with double quotes in RAILS_ENV and RMK now fixed"'
   - '--port=3000'
   env:
   - 'APP_NAME=$_APP_NAME'
@@ -129,6 +130,7 @@ steps:
   #    raise ArgumentError, \"Missing `secret_key_base` for '#{Rails.env}' environment, set this string with `bin/rails credentials:edit`\"",
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
+
 
 
 # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
