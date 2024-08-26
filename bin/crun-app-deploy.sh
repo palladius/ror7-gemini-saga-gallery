@@ -11,7 +11,7 @@ echodo gcloud --project "$PROJECT_ID" \
       --memory "2048Mi" \
       --cpu "4" \
       --region   "$GCP_REGION" \
-      --port 3000 \
+      --port 8080 \
       --set-env-vars='description=created-from-bin-slash-crun-app-deploy-sh' \
       --set-env-vars="RAILS_MASTER_KEY=$RAILS_MASTER_KEY" \
       --set-env-vars="RAILS_ENV=development" \

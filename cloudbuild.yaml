@@ -127,7 +127,7 @@ steps:
   - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
   - '--set-env-vars=RAILS_ENV=development'
   - '--set-env-vars=MESSAGGIO_OCCASIONALE="problem with double quotes in RAILS_ENV and RMK now fixed"'
-  - '--port=3000'
+  - '--port=8080'
   env:
   - 'APP_NAME=$_APP_NAME'
   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
@@ -155,10 +155,10 @@ steps:
   - '--allow-unauthenticated'
   - '--set-env-vars="RAILS_MASTER_KEY=$_RAILS_MASTER_KEY"'
   - '--set-env-vars="RAILS_ENV=production"'
-  - '--port=3000'
+  - '--port=8080'
   env:
   - 'APP_NAME=$_APP_NAME'
   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
-  - 'PORT=3000'
+  - 'PORT=8080'
