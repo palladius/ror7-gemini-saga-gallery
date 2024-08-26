@@ -145,7 +145,7 @@ steps:
   args:
   - 'run'
   - 'deploy'
-  - '${_APP_NAME}-cbyaml-dev'
+  - '${_APP_NAME}-cbyaml8080-dev'
   - '--image'
   - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
   - '--region'
@@ -153,8 +153,9 @@ steps:
   - '--platform'
   - 'managed'
   - '--allow-unauthenticated'
-  - '--set-env-vars="RAILS_MASTER_KEY=$_RAILS_MASTER_KEY"'
-  - '--set-env-vars="RAILS_ENV=production"'
+  - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
+  - '--set-env-vars=RAILS_ENV=production'
+  - '--set-env-vars=RAILS_SERVE_STATIC_FILES=absolutely'
   - '--port=8080'
   env:
   - 'APP_NAME=$_APP_NAME'
