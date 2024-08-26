@@ -31,7 +31,7 @@ class Medium < ApplicationRecord
 
   # class methods
   def self.emoji = '🖼️📹'
-  def self.best_image = self.first # TODO
+  def self.best_image = Medium.order(:gemini_quality).last # reverse.first
 
 
 end

@@ -16,3 +16,5 @@ pin "date-fns" # @3.6.0
 
 # https://stackoverflow.com/questions/71489694/failed-to-resolve-module-specifier-stimulus-autocomplete
 #pin "stimulus-autocomplete", to: "https://cdn.jsdelivr.net/npm/stimulus-autocomplete@3.0.2/src/autocomplete.min.js"
+#pin "stimulus-lightbox", to: "https://cdn.jsdelivr.net/npm/stimulus-lightbox@4.0.0/src/autocomplete.min.js"
+# https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.css

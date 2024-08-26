@@ -1,5 +1,6 @@
-<div class="relative h-full w-full overflow-hidden rounded-lg">
-  <img src="<%= image.medium_file.url  %>" alt="<%= image.caption %>" class="h-full w-full object-cover object-center">
+<h2>Picture of the day</h2>
+<div class="relative h-full w-1/2 overflow-hidden rounded-lg border-4 border-white border-opacity-50">
+  <img src="<%= image.medium_file.url %>" alt="<%= image.caption %>" class="h-full w-full object-cover object-center">
   <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 hover:opacity-100 transition-opacity duration-300">
     <div class="flex items-center justify-center h-full w-full">
       <div class="text-white text-center">
@@ -10,3 +11,5 @@
     </div>
   </div>
 </div>
+
+<b>Caption 2:</b> <%= image.caption %>

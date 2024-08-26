@@ -1,7 +1,8 @@
 ## Changelog
 
 ```
-2024-08-26 0.4.15 Card for picture of the day
+2024-08-26 0.4.16 Fixed Lightbox WOOHOOWOOO!!
+2024-08-26 0.4.16 Card for picture of the day
 2024-08-26 0.4.15 GCS is now working
 2024-08-26 0.4.14 [ops] I give up. Moving from 3000 to 8080..
 2024-08-26 0.4.13 [ops] CRun = more observability at config/riccardo

@@ -2,14 +2,7 @@
 <%= h1(@medium.to_s) %>
 <%= render @medium %>
 <%= render 'shared/actions', object: @medium %>
-<div>
-  <%= link_to "Edit this medium", edit_medium_path(@medium) %> |
-  <%= link_to "Back to media", media_path %>
-  <%= button_to "Destroy this medium", @medium, method: :delete %>
-</div>
-
-<h2>Testing JS Lightbox</h2>
-
+<%= h2 'Testing JS Lightbox' %>
 
 <%= link_to image_tag(@medium.medium_file), data: {
     controller: 'lightbox',
