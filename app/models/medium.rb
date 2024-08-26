@@ -31,5 +31,7 @@ class Medium < ApplicationRecord
 
   # class methods
   def self.emoji = '🖼️📹'
+  def self.best_image = self.first # TODO
+
 
 end

@@ -1,0 +1,12 @@
+<div class="relative h-full w-full overflow-hidden rounded-lg">
+  <img src="<%= image.medium_file.url  %>" alt="<%= image.caption %>" class="h-full w-full object-cover object-center">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 hover:opacity-100 transition-opacity duration-300">
+    <div class="flex items-center justify-center h-full w-full">
+      <div class="text-white text-center">
+        <h2 class="text-2xl font-semibold"><%= image.title %></h2>
+        <p class="text-lg"><%= image.caption %></p>
+        <a href="<%= image.medium_file.url %>" data-lightbox="image-gallery" data-title="<%= image.title %>" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">View Image</a>
+      </div>
+    </div>
+  </div>
+</div>
