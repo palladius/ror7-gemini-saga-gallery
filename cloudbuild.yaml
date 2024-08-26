@@ -114,11 +114,15 @@ steps:
   - 'deploy'
   - 'cbyaml-${_APP_NAME}-dev'
   - '--image'
-  - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
+  -   "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
   - '--region'
-  - "${_REGION}"
+  -   "${_REGION}"
   - '--platform'
-  - 'managed'
+  -   'managed'
+  - '--memory'
+  -   '8Gi'
+  - '--cpu'
+  -   '4'
   - '--allow-unauthenticated'
   - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
   - '--set-env-vars=RAILS_ENV=development'
