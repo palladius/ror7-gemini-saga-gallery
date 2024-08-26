@@ -1,7 +1,8 @@
 ## Changelog
 
 ```
-2024-08-25 0.4.12[ops] Testing Cloud Run target on CB locally directly on the YAML for a change..
+2024-08-26 0.4.13[ops] CRun = more observability at config/riccardo
+2024-08-26 0.4.12[ops] Testing Cloud Run target on CB locally directly on the YAML for a change..
 2024-08-25 0.4.11[ops] AutoTag Finally works!!
 2024-08-25 0.4.10[ops] Still fixing AutoTag - apparently SHORT_SHA is broken.
 2024-08-25 0.4.9 [ops] AutoTag: fixing autotag.sh with proper ENVs

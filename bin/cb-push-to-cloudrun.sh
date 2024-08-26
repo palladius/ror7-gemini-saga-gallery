@@ -12,10 +12,9 @@ exit 0
 # As long as CB has access to those secrets (CB SA was enabled to read secrets).
 #####################################################################################################
 
-export DEPLOY_VERSION='1.0.1'
-#direnv allow "$(git rev-parse --show-toplevel)"
+export DEPLOY_VERSION='1.0.1_26aug24'
 # if it fails no probs... yet
-. .env.sh
+#. .env.sh
 
 set -euo pipefail
 
