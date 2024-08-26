@@ -88,8 +88,25 @@ steps:
   - 'SHORT_SHA=$SHORT_SHA'
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Push to Cloud run from BASH (DEV)
+  entrypoint: bash
+  args:
+  - bin/cb-push-to-cloudrun.sh dev
+  env:
+  - 'PROJECT_ID=$PROJECT_ID'
+  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
+  - 'DATABASE_HOST=$_DATABASE_HOST'
+  - 'DATABASE_NAME=$_DATABASE_NAME'
+  - 'DATABASE_USER=$_DATABASE_USER'
+  - 'DATABASE_PASS=$_DATABASE_PASS'
+#  - 'GCP_REGION=$GCP_REGION'
+#  - 'REGION=$REGION'
+
+
 # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  id: Push to Cloud run directly from CB.yaml (dev)
   entrypoint: gcloud
   args:
   - 'run'
@@ -102,25 +119,39 @@ steps:
   - '--platform'
   - 'managed'
   - '--allow-unauthenticated'
+  - '--set-env-vars="RAILS_MASTER_KEY=$_RAILS_MASTER_KEY"'
+  - '--set-env-vars="RAILS_ENV=development"'
+  - '--port=3000'
+  env:
+  - 'APP_NAME=$_APP_NAME'
+  - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
+  #    raise ArgumentError, \"Missing `secret_key_base` for '#{Rails.env}' environment, set this string with `bin/rails credentials:edit`\"",
+  - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
+  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
+
+
+# deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+# Testing until the other works
+  id: Push to Cloud run directly from CB.yaml (PROD - harder)
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'cbyaml-${_APP_NAME}-dev'
+  - '--image'
+  - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
+  - '--region'
+  - "${_REGION}"
+  - '--platform'
+  - 'managed'
+  - '--allow-unauthenticated'
+  - '--set-env-vars="RAILS_MASTER_KEY=$_RAILS_MASTER_KEY"'
+  - '--set-env-vars="RAILS_ENV=production"'
+  - '--port=3000'
   env:
   - 'APP_NAME=$_APP_NAME'
   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
-  - 'RAILS_ENV=development'
-
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  id: Push to Cloud run from POOR Env with DB stuff..
-  entrypoint: bash
-  args:
-  - bin/cb-push-to-cloudrun.sh
-  env:
-  - 'PROJECT_ID=$PROJECT_ID'
-  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
-  - 'DATABASE_HOST=$_DATABASE_HOST'
-  - 'DATABASE_NAME=$_DATABASE_NAME'
-  - 'DATABASE_USER=$_DATABASE_USER'
-  - 'DATABASE_PASS=$_DATABASE_PASS'
-#  - 'GCP_REGION=$GCP_REGION'
-#  - 'REGION=$REGION'
-
+  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
+  - 'PORT=3000'
