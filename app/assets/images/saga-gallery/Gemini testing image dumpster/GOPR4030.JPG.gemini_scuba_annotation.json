@@ -1,0 +1,30 @@
+{
+  "quality": 6.5,
+  "relevance": 4.5,
+  "text": "",
+  "caption": "**A Shimmering Ballet of Scissortails:**\n\nSunlight dapples the ocean floor, illuminating a mesmerizing spectacle \u2013 a school of Oriental Scissortail Sergeants (Abudefduf sexfasciatus) engaged in an intricate dance amidst the coral rubble. Their bodies, adorned with five vertical black bars against a silvery canvas, shimmer and flash as they dart and weave with balletic precision. Their namesake scissor-like tails, a testament to their agility, propel them through the crystal-clear waters. The vibrant tableau underscores the teeming biodiversity found within even seemingly desolate stretches of our oceans.",
+  "technicalities": "The underwater image is dominated by various shades of green and teal, reflecting the color of the water and the algae growing on the ocean floor. The sandy bottom adds patches of light beige throughout. There are splashes of yellow on the tails and fins of the many small fish swimming in the frame. These fish also have a pattern of one or two black spots and a lateral line of a lighter, almost iridescent, color on their bodies. Some dark coral in brown and deep green hues add a textural element.",
+  "width_x_height": "5568x4176",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "app/assets/images/saga-gallery/Gemini testing image dumpster/GOPR4030.JPG",
+  "txt_script_hostname": "derek.zrh.corp.google.com",
+  "txt_script_version": "0.12.2",
+  "txt_prompt_version": "0.10.2",
+  "txt_script_date": "2024-08-26",
+  "txt_script_execution_time": 52.50320839881897,
+  "life_forms": [
+    [
+      "25+",
+      "fish",
+      "various sizes, with yellow tails"
+    ],
+    [
+      "1",
+      "ray",
+      "flat, on the sand"
+    ]
+  ],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

@@ -1,0 +1,36 @@
+{
+    "quality": 8.5,
+    "relevance": 0,
+    "text": "2014, 2015, 2016, 2017, 2018, 2019, 202, FINISHERGUARD, 15, IRONMAN 70.3, 1.9 KM SWIM - 90.1 KM BIKE - 21.1 KM RUN",
+    "caption": "A triumphant athlete, adorned with the medal of an Ironman 70.3 finisher, stands proudly before a field of bicycles.  His face, etched with a mixture of fatigue and elation, reflects the arduous journey he has just completed.  The rows of bicycles, glinting in the sunlight, serve as a testament to the collective spirit of endurance and athleticism present at the event.",
+    "tecnicalities": "Color image, likely JPEG format.  The lighting is natural and even, with no harsh shadows or overexposed areas. The composition is simple but effective, with the man's happy expression and the medal drawing the viewer's eye. There's a very slight blur to the background, which is typical for photos taken on a sunny day with a wide aperture. However, this doesn't detract significantly from the overall quality.",
+    "width_x_height": "4032x3024",
+    "gemini_model": "gemini-1.5-pro",
+    "filename": "Random Family Pix/PXL_20220619_140335441.jpg",
+    "txt_script_version": "0.10.2",
+    "txt_prompt_version": "0.10.2",
+    "txt_script_date": "2024-08-26",
+    "life_forms": [
+        [
+            "1",
+            "human",
+            "male, smiling, wearing a blue T-shirt"
+        ],
+        [
+            "1",
+            "human",
+            "in the background, wearing a blue shirt"
+        ],
+        [
+            "1",
+            "human",
+            "in the background, wearing a black shirt"
+        ],
+        [
+            "1",
+            "human",
+            "in the background, wearing a black shirt and a white cap"
+        ]
+    ],
+    "json_prompt_version": "0.5"
+}

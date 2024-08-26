@@ -1,0 +1,19 @@
+{
+  "quality": -1,
+  "relevance": -1,
+  "text": "",
+  "caption": "",
+  "technicalities": "",
+  "width_x_height": "",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "./Gemini testing image dumpster/GOPR4032.JPG",
+  "txt_script_hostname": "derek.zrh.corp.google.com",
+  "txt_script_version": "0.10.3",
+  "txt_prompt_version": "0.10.2",
+  "txt_script_date": "2024-08-26",
+  "txt_script_execution_time": 50.547242879867554,
+  "life_forms": [],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

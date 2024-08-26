@@ -1,0 +1,80 @@
+{
+  "quality": 6.5,
+  "relevance": 5.5,
+  "text": "",
+  "caption": "A lone sea cucumber, adorned with a pattern of green and brown, rests on the sandy seabed. The surrounding water, tinged with a subtle green hue, hints at the shallow depths of a coastal dive where sunlight filters through. The fine sand speaks of tranquility, a haven undisturbed by strong currents, allowing the sea cucumber a moment of peaceful repose.",
+  "technicalities": "The image exhibits a slight blur, particularly noticeable around the edges of the sea cucumber. This could be attributed to motion or focus challenges during capture.  The colors are true-to-life, rendering the underwater environment with a realistic palette. The composition, while clear in its focus on the sea cucumber, is somewhat plain. A slightly altered angle or the inclusion of an additional background element might have enhanced its visual appeal.",
+  "width_x_height": "",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "Gemini testing image dumpster/GOPR4041.JPG.gemini_scuba_annotation.txt",
+  "txt_script_hostname": "ricc-macbookpro3.roam.internal",
+  "txt_script_version": "0.9.6",
+  "txt_prompt_version": "",
+  "txt_script_date": "2024-08-25",
+  "txt_script_execution_time": null,
+  "life_forms": [
+    [
+      "1",
+      "sea cucumber",
+      "green, with black stripes"
+    ]
+  ],
+  "json_prompt_version": "1.0",
+  "json_script_version": [
+    [
+      "0.10.3",
+      "2024-08-26",
+      "Adding SCRIPT_VEr also from JSON prompt since it could come in 2 different times. Unlikely but possible."
+    ],
+    [
+      "0.10.2",
+      "2024-08-26",
+      "Adding National Geographic caption to TXT prompts"
+    ],
+    [
+      "0.10.1",
+      "2024-08-26",
+      "Adding Execution time to step 1."
+    ],
+    [
+      "0.10.0",
+      "2024-08-26",
+      "Adding Input/Output filename. A bug wrote the output and distilled into JSON output file. Since 0.10.0 TXT we can distill a 0.4 JSON correct:)"
+    ],
+    [
+      "0.9.8",
+      "2024-08-26",
+      "Adding JSON distillation"
+    ],
+    [
+      "0.9.7",
+      "2024-08-26",
+      "Added scubid(TM) question: is this scuba?"
+    ],
+    [
+      "0.9.6",
+      "2024-08-25",
+      "Renamed output from .gemini. to .gemini_scuba_annotation. to hjihlight what it does"
+    ],
+    [
+      "0.9.5",
+      "2024-08-25",
+      "Added date to changelog. Added relevance 1..10"
+    ],
+    [
+      "0.9.4",
+      "2024-08-24",
+      "Fixing prompt[0] on scuibe diving, removing my kids. Removed typo in TURLE. REmoved double quotes in question on TEXT as it gives error"
+    ],
+    [
+      "0.9.3",
+      "2024-08-24",
+      "Fixed file -i on Mac"
+    ],
+    [
+      "0.9.2",
+      "2024-08-24",
+      "Last Script executed on derek.."
+    ]
+  ]
+}

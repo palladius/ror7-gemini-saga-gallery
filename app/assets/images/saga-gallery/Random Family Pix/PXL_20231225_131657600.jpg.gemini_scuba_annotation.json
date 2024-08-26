@@ -1,0 +1,21 @@
+{
+    "quality": 8.5,
+    "relevance": 1.0,
+    "text": "BIANCHI, BRASIL",
+    "caption": "A man in a bright yellow Brazil soccer jersey poses for a selfie with a young boy in front of a stunning ocean vista. The boy, dressed in a black and white striped shirt and colorful green pants, leans in close to the man, both their gazes drawn to the vast expanse of blue.  The rugged coastline, bathed in warm sunlight, provides a picturesque backdrop.",
+    "tecnicalities": "The image is well-lit with bright, natural lighting, resulting in good contrast and detail. The colors are vibrant, particularly the yellow of the man's shirt and the blue of the ocean. The composition is well-framed, with the subjects positioned nicely against the backdrop of the ocean and cliffs.",
+    "width_x_height": "",
+    "gemini_model": "gemini-1.5-pro",
+    "filename": "Random Family Pix/PXL_20231225_131657600.jpg",
+    "txt_script_version": "0.10.2",
+    "txt_prompt_version": "0.10.2",
+    "txt_script_date": "2024-08-26",
+    "life_forms": [
+        [
+            "2",
+            "humans",
+            "one adult man, one kid"
+        ]
+    ],
+    "json_prompt_version": "0.5"
+}

@@ -19,9 +19,9 @@ class Medium < ApplicationRecord
   end
 
 
-  def caption
-    @caption || 'Caption coming'
-  end
+  # def caption
+  #   @caption || 'Caption coming'
+  # end
 
   # model
   def to_s = "#{Medium.emoji} Medium '#{title}'"

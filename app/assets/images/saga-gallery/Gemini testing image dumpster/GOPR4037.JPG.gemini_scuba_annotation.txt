@@ -1,0 +1,9 @@
+== Common infos ==
+- Script Version: 0.10.3
+- Text Prompt Version: 0.10.2
+- Script Execution Date: 2024-08-26 12:16:37.587732
+- Input FileName: ./Gemini testing image dumpster/GOPR4037.JPG
+- Output FileName: ./Gemini testing image dumpster/GOPR4037.JPG.gemini_scuba_annotation.txt
+- Gemini Model used: gemini-1.5-pro
+- Hostname: derek.zrh.corp.google.com
+- Execution time: 42.22164726257324

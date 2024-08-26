@@ -1,0 +1,19 @@
+{
+  "quality": 3.0,
+  "relevance": 1.5,
+  "text": "",
+  "caption": "An abstract underwater photograph with blurry shapes and dark blue water. The bottom is rocky and illuminated by an unseen light source, hinting at a night dive or a location with poor visibility.",
+  "technicalities": "Blurry, deep blue and teal colors, wavy patterns, almost dreamlike.",
+  "width_x_height": "",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "GOPR5141.JPG.gemini_scuba_annotation.txt",
+  "txt_script_hostname": "ricc-macbookpro3.roam.internal",
+  "txt_script_version": "0.9.6",
+  "txt_prompt_version": "",
+  "txt_script_date": "2024-08-25",
+  "txt_script_execution_time": -1.0,
+  "life_forms": [],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

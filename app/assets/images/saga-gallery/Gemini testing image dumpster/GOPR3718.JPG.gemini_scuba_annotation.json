@@ -1,0 +1,25 @@
+{
+  "quality": 4.0,
+  "relevance": 1.0,
+  "text": "4:47\nSTEPS 12821\nMon 15\n81",
+  "caption": "A black mirror on a canvas of flesh, reflecting not vanity but purpose. Every pixel pulsed with data, a digital heartbeat charting the ebb and flow of human endeavor. In a world awash in information, it offered a singular truth: time waits for no one.",
+  "technicalities": "color, blurred, lighting not ideal",
+  "width_x_height": "5568x4176",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "app/assets/images/saga-gallery/Gemini testing image dumpster/GOPR3718.JPG",
+  "txt_script_hostname": "derek.zrh.corp.google.com",
+  "txt_script_version": "0.12.2",
+  "txt_prompt_version": "0.10.2",
+  "txt_script_date": "2024-08-26",
+  "txt_script_execution_time": 44.17696404457092,
+  "life_forms": [
+    [
+      "1",
+      "human",
+      "a part of arm and hand"
+    ]
+  ],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

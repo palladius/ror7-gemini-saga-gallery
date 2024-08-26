@@ -1,0 +1,19 @@
+{
+  "quality": 4.0,
+  "relevance": 1.0,
+  "text": "",
+  "caption": "An underwater cave illuminated by an artificial light source. The cave is dark and mysterious, with blurry black rocks and a spot of bright teal green in the center.",
+  "technicalities": "The image is quite blurry with uneven lighting.  Much of the scene is dark. The colors are mainly dark with a bright teal green light source.",
+  "width_x_height": "",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "GOPR5094.JPG.gemini_scuba_annotation.txt",
+  "txt_script_hostname": "ricc-macbookpro3.roam.internal",
+  "txt_script_version": "0.9.6",
+  "txt_prompt_version": "",
+  "txt_script_date": "2024-08-25",
+  "txt_script_execution_time": null,
+  "life_forms": [],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

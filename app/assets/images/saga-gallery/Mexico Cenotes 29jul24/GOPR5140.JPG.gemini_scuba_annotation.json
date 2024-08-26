@@ -1,0 +1,30 @@
+{
+  "quality": 4.5,
+  "relevance": 5.5,
+  "text": "",
+  "caption": "An underwater cave scene illuminated by divers' lights. The limited visibility and mottled surfaces suggest a silty environment. A potential fish is barely visible in the murky depths, while two divers with powerful lights explore the underwater realm.",
+  "technicalities": "The image is quite blurry with dark teal, green, and black colors. It features two distinct light sources creating a spotlight effect. The patterns are organic and irregular.",
+  "width_x_height": "",
+  "gemini_model": "gemini-1.5-pro",
+  "filename": "GOPR5140.JPG.gemini_scuba_annotation.txt",
+  "txt_script_hostname": "ricc-macbookpro3.roam.internal",
+  "txt_script_version": "0.9.6",
+  "txt_prompt_version": "",
+  "txt_script_date": "2024-08-25",
+  "txt_script_execution_time": null,
+  "life_forms": [
+    [
+      "1",
+      "human",
+      "on the upper right corner of the image with a diving equipment"
+    ],
+    [
+      "1",
+      "fish",
+      "long, green, on the bottom left of the image"
+    ]
+  ],
+  "json_prompt_version": "1.0",
+  "json_script_version": "0.12.2",
+  "json_script_date": "2024-08-26"
+}

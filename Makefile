@@ -19,15 +19,21 @@ credentials-edit:
 	rails credentials:edit
 
 import:
-	rake gallery:import_local_files_to_db
+	MAX_ELEMENTS=100 rake gallery:import_local_files_to_db
 
 
 destroy-and-reimport-YES-I_AM_SURE:
 	RAILS_ENV=development rake db:drop || echo this fails but it doesnt..
 	bin/rails db:migrate
-	rake gallery:import_local_files_to_db
+	MAX_ELEMENTS=100 rake gallery:import_local_files_to_db
 	echo Rebuilding assets..
 	rake assets:precompile
 
 docker-build:
 	docker build .
+
+# file is in GIC but soon in sakura.
+gemini-generate-some-metadata:
+	gopro-gemini-iterator.py app/assets/images/saga-gallery/  --max-files 5
+gemini-generate-all-metadata:
+	gopro-gemini-iterator.py app/assets/images/saga-gallery/  --max-files 123456

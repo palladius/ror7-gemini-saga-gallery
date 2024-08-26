@@ -1,0 +1,103 @@
+== Common infos ==
+- Script Version: 0.12.2
+- Text Prompt Version: 0.10.2
+- Script Execution Date: 2024-08-26 14:19:54.703600
+- Input FileName: app/assets/images/saga-gallery/Gemini testing image dumpster/GOPR4030.JPG
+- Output FileName: app/assets/images/saga-gallery/Gemini testing image dumpster/GOPR4030.JPG.gemini_scuba_annotation.txt
+- Gemini Model used: gemini-1.5-pro
+- Hostname: derek.zrh.corp.google.com
+- Execution time: 52.50320839881897
+- Image information: {'width': 5568, 'height': 4176, 'size': 8549924}
+========================================
+PROMPT: Describe this image (from a Scuba Diving perspective):
+GEMINI ANSWER:
+A school of slender, silver fish with yellow-tipped tails swim over a sandy patch on a coral reef. Sunlight filters down through the water, casting a greenish light on the scene. There's a variety of hard and soft coral, and a few other lone fish can be seen. The perspective suggests the photo was taken by a diver swimming above the school. 
+
+
+========================================
+PROMPT: Are there any fish/maritime life/animal/humans in the image? Give me a bulletpoint list of them, with cardinality before and description in parenthesis (eg "1 turtle (green, a bit blurred)", "3 triggerfish (one is a titan triggerfish with yellow and blue colors))
+GEMINI ANSWER:
+- 25+ fish (various sizes, with yellow tails)
+- 1 ray (flat, on the sand) 
+
+
+========================================
+PROMPT: How would you rate this image quality from 1 to 10? I'm thinking of blurring, and simple ability to see what's in it.
+GEMINI ANSWER:
+I'd rate this image a 6 or 7 out of 10. 
+
+Here's why:
+
+* **Positives:**  The image clearly shows a school of fish and the coral reef environment. The colors are vibrant, and the subject is in focus.
+* **Negatives:** There's a noticeable amount of graininess/noise in the image, particularly in the water. This could be due to low light conditions or a lower-quality camera. The overall sharpness could be improved. 
+
+If the image were slightly less grainy and a bit sharper, it would easily be an 8 or 9. 
+
+
+========================================
+PROMPT: Would you consider this image worth keeping for me (I would say yes if there is a member of my family and/or there's a cool animal or fish, and the quality is not too bad)
+GEMINI ANSWER:
+Since there aren't any people in the image, the deciding factor is whether you find the fish and underwater scene 'cool'. 
+
+The image quality isn't bad, and it shows a school of fish with interesting markings swimming over a coral reef.  
+
+**If you enjoy underwater photography or find these types of fish and environments interesting, then yes, it's worth keeping.** 
+
+Ultimately, the decision is yours based on your personal preferences. 
+
+
+========================================
+PROMPT: How would you rate the image RELEVANCE from 1 to 10? 10 would have a high quality, close shark or nudibranch, 7 a big fish in the distance and 1 just algae.
+GEMINI ANSWER:
+I'd rate the relevance of this image a 4 or 5. 
+
+Here's why:
+
+* **Subject:** The image focuses on a school of small fish, which is more interesting than just algae but not as captivating as larger, more unique marine life. 
+* **Quality:** The image quality is decent, providing a clear view of the fish and the coral environment. However, it's not a particularly striking or artistic underwater shot.
+* **Composition:** The composition is somewhat scattered. While the fish are the focal point, their arrangement doesn't create a strong visual impact. 
+
+Overall, the image is pleasant and showcases a typical underwater scene, but it lacks the "wow" factor of a higher-rated image. 
+
+
+========================================
+PROMPT: What is the main subject of the image?
+GEMINI ANSWER:
+The main subjects of the image are **fish swimming in a coral reef**. 
+
+
+========================================
+PROMPT: Is this picture a scuba-related picture? (eg, taken underwater, or just before/after a dive)
+GEMINI ANSWER:
+Yes, this picture was taken underwater. 🐟 🐠 🐡 
+
+
+========================================
+PROMPT: Describe the colors and patterns present in the image.
+GEMINI ANSWER:
+This underwater image is dominated by various shades of green and teal, reflecting the color of the water and the algae growing on the ocean floor.  The sandy bottom adds patches of light beige throughout. There are splashes of yellow on the tails and fins of the many small fish swimming in the frame. These fish also have a pattern of one or two black spots and a lateral line of a lighter, almost iridescent, color on their bodies. Some dark coral in brown and deep green hues add a textural element. 
+
+
+========================================
+PROMPT: Is there any text or writing visible in the image?
+GEMINI ANSWER:
+No, there is no text or writing visible in this image. 
+
+
+========================================
+PROMPT: Give me all the technicalities of the image you can get: height, width, B/W vs color, aspect ratio, ..
+GEMINI ANSWER:
+I don't have access to specific image details like height, width, or aspect ratio as I only process text. To get those details, you'd need to inspect the image file itself. You can usually right-click on an image in a file explorer or web browser and select "Properties" or "Get Info" to view these technical details. 
+
+However, I can tell you that based on your description, the image is in **color**. 
+
+
+========================================
+PROMPT: You are a National Geographic reporter, and take great pictures. You want to take a prize and need to come up with a GREAT caption which is captivating and stands out. Write a description of this medium which is incisive and has a rich vocabulary and describing the species in this picture.
+GEMINI ANSWER:
+**A Shimmering Ballet of Scissortails:**
+
+Sunlight dapples the ocean floor, illuminating a mesmerizing spectacle – a school of Oriental Scissortail Sergeants (Abudefduf sexfasciatus) engaged in an intricate dance amidst the coral rubble. Their bodies, adorned with five vertical black bars against a silvery canvas, shimmer and flash as they dart and weave with balletic precision. Their namesake scissor-like tails, a testament to their agility, propel them through the crystal-clear waters. The vibrant tableau underscores the teeming biodiversity found within even seemingly desolate stretches of our oceans. 
+
+
+========================================
