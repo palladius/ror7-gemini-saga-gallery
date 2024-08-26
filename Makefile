@@ -13,7 +13,11 @@ dev-troubleshot-js:
 dev-old:
 	rake assets:precompile
 	rails s
-
+prod:
+	RAILS_ENV=production rake assets:precompile
+	RAILS_ENV=production bin/rails db:prepare
+	RAILS_ENV=production MAX_ELEMENTS=100 rake gallery:import_local_files_to_db
+	RAILS_ENV=production rails s
 # TODO check if its different dev and prod -= when needed.
 credentials-edit:
 	rails credentials:edit

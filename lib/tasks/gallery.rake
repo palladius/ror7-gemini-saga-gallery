@@ -82,7 +82,7 @@ namespace :gallery do
         if File.exist?(image_path + '.gemini_scuba_annotation.json')
           puts("Found JSON! With the power of Gemini!!!")
           hash = read_json_file(image_path + '.gemini_scuba_annotation.json')
-          puts(hash.keys.join(' #️⃣ '))
+          #puts(hash.keys.join(' #️⃣ '))
         end
         medium = Medium.find_or_create_by(title: image_title, path: relative_path(image_path, Rails.root.to_s)) do |m|
           m.media_type = media_type

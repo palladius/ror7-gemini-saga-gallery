@@ -52,3 +52,4 @@ _env_gaic.rb
 iac/00-init.sh
 private/ror-goldie-scooby-n-sagallery.json
 private/
+db/production-changeme-silly.sqlite3

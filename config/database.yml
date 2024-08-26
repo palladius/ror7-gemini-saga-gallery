@@ -90,8 +90,14 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: ror7_gemini_saga_gallery_production
+#   username: ror7_gemini_saga_gallery
+#   password: <%= ENV["ROR7_GEMINI_SAGA_GALLERY_DATABASE_PASSWORD"] %>
+
 production:
-  <<: *default
-  database: ror7_gemini_saga_gallery_production
-  username: ror7_gemini_saga_gallery
-  password: <%= ENV["ROR7_GEMINI_SAGA_GALLERY_DATABASE_PASSWORD"] %>
+  adapter: sqlite3
+  database: db/production-changeme-silly.sqlite3
+  pool: 5
+  timeout: 5000

@@ -9,7 +9,7 @@ eagerLoadControllersFrom("controllers", application)
 import { Application } from '@hotwired/stimulus'
 
 // 2. Ricc: importing lightbox
-import Lightbox from 'stimulus-lightbox'
+import Lightbox from '@stimulus-components/lightbox'
 // 2. Ricc Carousel: https://www.stimulus-components.com/docs/stimulus-carousel
 import Carousel from '@stimulus-components/carousel'
 // 2. Ricc TimeAgo: https://www.stimulus-components.com/docs/stimulus-timeago
