@@ -48,4 +48,7 @@ _env_gaic.sh
 _env_gaic.py
 _env_gaic.rb
 .DS_Store
-.executed_ok.01-create-Artifact-Repo.sh.touch
+.executed_*touch
+iac/00-init.sh
+private/ror-goldie-scooby-n-sagallery.json
+private/
