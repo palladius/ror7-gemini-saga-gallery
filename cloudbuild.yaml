@@ -92,7 +92,8 @@ steps:
   id: Push to Cloud run from BASH (DEV)
   entrypoint: bash
   args:
-  - bin/cb-push-to-cloudrun.sh dev
+  - bin/cb-push-to-cloudrun.sh
+  - dev
   env:
   - 'PROJECT_ID=$PROJECT_ID'
   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
