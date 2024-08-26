@@ -89,7 +89,7 @@ steps:
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: Push to Cloud run from BASH (DEV)
+  id: 4. Push to Cloud run from BASH (DEV)
   entrypoint: bash
   args:
   - bin/cb-push-to-cloudrun.sh
@@ -107,12 +107,12 @@ steps:
 
 # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  id: Push to Cloud run directly from CB.yaml (dev)
+  id: 5. Push to Cloud run directly from CB.yaml (dev)
   entrypoint: gcloud
   args:
   - 'run'
   - 'deploy'
-  - 'cbyaml-${_APP_NAME}-dev'
+  - '${_APP_NAME}-cbyaml-dev'
   - '--image'
   -   "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
   - '--region'
@@ -134,32 +134,33 @@ steps:
   #    raise ArgumentError, \"Missing `secret_key_base` for '#{Rails.env}' environment, set this string with `bin/rails credentials:edit`\"",
   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
-
-
-
-# deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-# Testing until the other works
-  id: Push to Cloud run directly from CB.yaml (PROD - harder)
-  entrypoint: gcloud
-  args:
-  - 'run'
-  - 'deploy'
-  - '${_APP_NAME}-cbyaml8080-dev'
-  - '--image'
-  - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
-  - '--region'
-  - "${_REGION}"
-  - '--platform'
-  - 'managed'
-  - '--allow-unauthenticated'
-  - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
-  - '--set-env-vars=RAILS_ENV=production'
-  - '--set-env-vars=RAILS_SERVE_STATIC_FILES=absolutely'
-  - '--port=8080'
-  env:
-  - 'APP_NAME=$_APP_NAME'
-  - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
-  - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
-  - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
   - 'PORT=8080'
+
+
+
+# # deploys to cloud run: https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run
+# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+# # Testing until the other works
+#   id: 6. Push to Cloud run directly from CB.yaml (PROD - harder)
+#   entrypoint: gcloud
+#   args:
+#   - 'run'
+#   - 'deploy'
+#   - '${_APP_NAME}-cbyaml8080-prod'
+#   - '--image'
+#   - "${_FINAL_AR_IMAGE_WITHOUT_TAG}:latest"
+#   - '--region'
+#   - "${_REGION}"
+#   - '--platform'
+#   - 'managed'
+#   - '--allow-unauthenticated'
+#   - '--set-env-vars=RAILS_MASTER_KEY=$_RAILS_MASTER_KEY'
+#   - '--set-env-vars=RAILS_ENV=production'
+#   - '--set-env-vars=RAILS_SERVE_STATIC_FILES=absolutely'
+#   - '--port=8080'
+#   env:
+#   - 'APP_NAME=$_APP_NAME'
+#   - 'SKAFFOLD_DEFAULT_REPO=$_SKAFFOLD_DEFAULT_REPO'
+#   - 'FINAL_AR_IMAGE_WITHOUT_TAG=$_FINAL_AR_IMAGE_WITHOUT_TAG'
+#   - 'RAILS_MASTER_KEY=$_RAILS_MASTER_KEY' # from CB trigger
+#   - 'PORT=8080'
