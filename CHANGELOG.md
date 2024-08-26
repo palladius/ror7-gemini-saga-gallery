@@ -1,6 +1,7 @@
 ## Changelog
 
 ```
+2024-08-26 0.4.19 not sure what ive done here. better gonna sleep.
 2024-08-26 0.4.18 Fixed PROD> Now prod works with sqlite. I know, im lazy!
 2024-08-26 0.4.17 Fixed Lightbox WOOHOOWOOO!!
 2024-08-26 0.4.16 Card for picture of the day

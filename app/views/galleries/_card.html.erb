@@ -4,15 +4,17 @@
   medium_file_path = cover_image.medium_file.variant(:thumbnail)
 %>
 <div class="gallery-card">
-
+<% if false %>
   <!-- code - if it worked! -->
-  <% if (gallery.cover_image.attached? rescue false) %>
+  <% if (gallery.cover_image.attached? rescue false  ) %>
     <%= link_to(image_tag(gallery.cover_image), gallery) %>
   <% else %>
     <div class="bg-gray-300 h-64 flex items-center justify-center">
-      <p class="text-gray-500">No Cover Image (right one)</p>
+      <p class="text-gray-500">No Cover Image Attached or more liekly Exception (TODO fix SQLite3::SQLException: no such column: media.cover_image_id
+      )</p>
     </div>
   <% end %>
+<% end %>
 
 <!-- code - with Riccardo patchwork -->
   <% if gallery.cover_image_manhouse %>
@@ -20,6 +22,7 @@
   <% else %>
     <div class="bg-gray-300 h-64 flex items-center justify-center">
       <p class="text-gray-500">No Cover Image (manhouse)</p>
+      <p class="text-black-200">XX pictures inside</p>
     </div>
   <% end %>
 

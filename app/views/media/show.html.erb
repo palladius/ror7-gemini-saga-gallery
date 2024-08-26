@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
 <%= h1(@medium.to_s) %>
-<%= render @medium %>
-<%= render 'shared/actions', object: @medium %>
-<%= h2 'Testing JS Lightbox' %>
+    <%= render partial: 'media/fancy_card', locals: { image: @medium } %>
+    <%= render @medium %>
+    <%= render 'shared/actions', object: @medium %>
+    <%= h2 'Testing JS Lightbox' %>
 
-<%= link_to image_tag(@medium.medium_file), data: {
-    controller: 'lightbox',
-#    lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
-    lightbox_src: url_for(@medium.thumbnail) # Or any other way to get the image URL
-} %>
+    <%= link_to image_tag(@medium.medium_file), data: {
+        controller: 'lightbox',
+    #    lightbox_src: url_for(@medium.medium_file) # Or any other way to get the image URL
+        lightbox_src: url_for(@medium.thumbnail) # Or any other way to get the image URL
+    } %>
