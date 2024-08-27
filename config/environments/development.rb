@@ -82,7 +82,8 @@ Rails.application.configure do
 
   # Riccardo START
   # Wietse idea to show some logs: https://stackoverflow.com/questions/5947551/how-to-write-flush-the-rails-log-when-the-process-dies
-  config.logger.auto_flushing = false
+  #config.logger.auto_flushing = true # why is it broken
+  config.log_level = :debug
   # Riccardo END
 
 

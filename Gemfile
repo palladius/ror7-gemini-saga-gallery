@@ -12,6 +12,9 @@ gem "image_processing", ">= 1.2" # ActiveStorage on steroids
 gem "tailwindcss-rails", "~> 2.7"
 gem "foreman", "~> 0.88.1" # for the sweet bin/dev to work and debug JS :)
 gem 'google-cloud-storage'
+group :development do
+  gem "lolcat" # utile in locale
+end
 # /Riccardo
 #############################################
 
