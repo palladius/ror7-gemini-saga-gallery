@@ -16,3 +16,11 @@ variable "terraform_prefix" {
   type = string
   default = "tf-"
 }
+
+variable "bucket_names" {
+  type = list(string)
+  default = [
+    "%sricc-public-%s-development",
+    "%sricc-public-%s-production"
+  ]
+}
