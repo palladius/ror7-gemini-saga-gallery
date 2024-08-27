@@ -1,6 +1,7 @@
 ## Changelog
 
 ```
+2024-08-27 0.4.22 Added seed if needed functionality.
 2024-08-27 0.4.21 enable CB script
 2024-08-27 0.4.20 enable `auto_flushing` - this was bs
 2024-08-26 0.4.19 not sure what ive done here. better gonna sleep.

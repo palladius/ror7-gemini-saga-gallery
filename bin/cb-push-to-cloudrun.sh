@@ -12,9 +12,7 @@
 # As long as CB has access to those secrets (CB SA was enabled to read secrets).
 #####################################################################################################
 
-export DEPLOY_VERSION='1.0.2_26aug24'
-# if it fails no probs... yet
-#. .env.sh
+export DEPLOY_VERSION='1.0.3_27aug24'
 
 set -euo pipefail
 
@@ -26,6 +24,7 @@ export GIT_COMMIT_SHA="$(git rev-parse HEAD)" # big commit
 export GIT_SHORT_SHA="${GIT_COMMIT_SHA:0:7}" # first 7 chars: Riccardo reproducing what CB does for me.
 export APP_VERSION="$(cat VERSION)"
 export GCLOUD_REGION="europe-west1" # e vabbe
+export CLOUD_RUN_APP_NAME="saga-gallery-cbpush-prod"
 # get from secret manager
 #SECRET_REGION=$(gcloud secrets versions access latest --secret=GCLOUD_REGION)
 
@@ -67,12 +66,14 @@ set -x
 # limits:
 #             cpu: 2000m
 #             memory: 2Gi
+# Previous errors:
+# ERROR: (gcloud.beta.run.deploy) spec.template.spec.containers[0].resources.limits.memory: Invalid value specified for container memory. For 8.0 CPU, memory must be between 4Gi and 32Gi inclusive.
 
 gcloud --project "$CLOUDRUN_PROJECT_ID" \
-    beta run deploy dhh-vanilla-701-prod \
+    beta run deploy "$CLOUD_RUN_APP_NAME" \
       --image    "$UPLOADED_IMAGE_WITH_VER" \
       --platform managed \
-      --memory "4G" \
+      --memory "8Gi" \
       --cpu "8" \
       --region   "$GCLOUD_REGION" \
       --set-env-vars='description=created-from-bin-slash-cb-push-to-cloudrun-sh' \
@@ -90,4 +91,6 @@ gcloud --project "$CLOUDRUN_PROJECT_ID" \
 
 
 # make sure we exit 0 with a string (set -e guarantees this)
-echo All is Done well like Locatelli.
+echo 'All is Done well like Locatelli.'
+
+
