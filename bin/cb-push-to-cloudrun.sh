@@ -25,6 +25,7 @@ export GIT_SHORT_SHA="${GIT_COMMIT_SHA:0:7}" # first 7 chars: Riccardo reproduci
 export APP_VERSION="$(cat VERSION)"
 export GCLOUD_REGION="europe-west1" # e vabbe
 export CLOUD_RUN_APP_NAME="saga-gallery-cbpush-prod"
+export PUSHER_HOSTNAME=`hostname`
 # get from secret manager
 #SECRET_REGION=$(gcloud secrets versions access latest --secret=GCLOUD_REGION)
 
@@ -46,6 +47,7 @@ echo "APP_VERSION:   $APP_VERSION"
 echo "GIT_SHORT_SHA: $GIT_SHORT_SHA"
 echo "UPLOADED_IMAGE_WITH_VER: $UPLOADED_IMAGE_WITH_VER"
 echo "UPLOADED_IMAGE_WITH_SHA: $UPLOADED_IMAGE_WITH_SHA"
+echo "PUSHER_HOSTNAME: $PUSHER_HOSTNAME"
 echo "---- /DEBUG ----"
 
 # source = now I have all info here even without direnv :)
@@ -83,7 +85,7 @@ gcloud --project "$CLOUDRUN_PROJECT_ID" \
       --set-env-vars="RAILS_MASTER_KEY=$RAILS_MASTER_KEY" \
       --set-env-vars="RAILS_ENV=production" \
       --set-env-vars="RAILS_SERVE_STATIC_FILES=true" \
-      --set-env-vars="MESSAGGIO_OCCASIONALE=Feel free to overwrite me on Cloud Run from UI for your dirty messages.." \
+      --set-env-vars="MESSAGGIO_OCCASIONALE=Pushed by $PUSHER_HOSTNAME. Feel free to overwrite me on Cloud Run from UI for your dirty messages.." \
       --set-env-vars="RAILS_LOG_TO_STDOUT=yesplease" \
       --allow-unauthenticated
 

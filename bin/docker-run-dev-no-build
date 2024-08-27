@@ -1,0 +1,14 @@
+#!/bin/bash
+
+VERSION=$(cat VERSION)
+
+#		--name ror7-gemini-saga-gallery-dev \
+echodo docker run -it -p 8080:8080 \
+		-e RAILS_MASTER_KEY="$RAILS_MASTER_KEY" \
+		-e RAILS_ENV=development \
+		-e PORT=3000 \
+		-e RAILS_LOG_TO_STDOUT=yesplease \
+		ror7-gemini-saga-gallery:$VERSION \
+        ./bin/rails s -b 0.0.0.0 -p 8080
+# Note: if you call SERVER it will call PREPARE which will break it.
+# todo $@

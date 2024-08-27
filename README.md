@@ -80,3 +80,71 @@ bin/importmap pin @stimulus-components/timeago
 bin/bundle add tailwindcss-rails
 bin/rails tailwindcss:install
 ```
+## Journal of errors
+
+### `2024-08-27`. docker issues
+
+Running rails locally opened a few things:
+1. Error: `The keyfile '/rails/private/ror-goldie-scooby-n-sagallery.json' is not a valid file.` I dont have it inside the container, need to add it to Secret Manager (as file) and symlink it from CRun. Sure. Easy peasy.
+2. Bug in rails (I guess?):  in `bin/docker-entrypoint` it says: if you call me with `./bin/rails server` EXACTLY, you get to call the `./bin/rails db:prepare`. Which is awesome! Look, if I call it like `bin/rails s`, it doesnt and run perfectly.
+
+```
+🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️
+🖼️🌞 GcsBucket:   ricc-public-saga-gallery-development
+🖼️🌞 APP_NAME:
+🖼️🌞 RAILS_ENV:              development
+🖼️🌞 Rails.env:              development
+🖼️🌞 MESSAGGIO_OCCASIONALE:
+🖼️🌞 SKAFFOLD_DEFAULT_REPO:
+🖼️🔑 RAILS_MASTER_KEY.frst5: REDACTED
+🖼️🔑 RAILS_MASTER_KEY.size:  32
+🖼️🔑 SECRET_KEY_BASE.frst5:
+🖼️🔑 SECRET_KEY_BASE.size:   0
+🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️
+cutey_finestrella_all_good
+Puma starting in single mode...
+* Puma version: 6.4.2 (ruby 3.3.4-p94) ("The Eagle of Durango")
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: development
+*          PID: 96
+* Listening on http://127.0.0.1:3000
+Use Ctrl-C to stop
+```
+
+I just need to do the -p 8080 as I do for the dockerfile.
+
+While if I call it with the docker entrypoint normally, when it invokes the prepare, look:
+
+```
+rails@dd72d24f07a2:/rails$ ./bin/rails db:prepare
+🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️ 🖼️
+🖼️🌞 GcsBucket:   ricc-public-saga-gallery-development
+🖼️🌞 APP_NAME:
+🖼️🌞 RAILS_ENV:              development
+🖼️🌞 Rails.env:              development
+🖼️🌞 MESSAGGIO_OCCASIONALE:
+🖼️🌞 SKAFFOLD_DEFAULT_REPO:
+🖼️🔑 RAILS_MASTER_KEY.frst5: REDACTED
+🖼️🔑 RAILS_MASTER_KEY.size:  32
+🖼️🔑 SECRET_KEY_BASE.frst5:
+🖼️🔑 SECRET_KEY_BASE.size:   0
+🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️🖼️
+cutey_finestrella_all_good
+bin/rails aborted!
+ActiveRecord::ConnectionNotEstablished: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory (ActiveRecord::ConnectionNotEstablished)
+        Is the server running locally and accepting connections on that socket?
+
+
+Caused by:
+PG::ConnectionBad: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory (PG::ConnectionBad)
+        Is the server running locally and accepting connections on that socket?
+
+Tasks: TOP => db:prepare
+(See full trace by running task with --trace)
+```
+
+### Actions
+
+which is weird! Ok, this will be fixed as soon as I move everything to postgres.
+But seriously, starting a project with postgres and than demote it to sqlite is a PITA gyros!
