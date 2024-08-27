@@ -33,7 +33,7 @@ export GCLOUD_REGION="europe-west1" # e vabbe
 CLOUDRUN_PROJECT_ID="$PROJECT_ID"
 # VER non lo posso calcolare da CB vanilla, serve un shell script :/
 UPLOADED_IMAGE_WITH_VER="europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:v$APP_VERSION"
-UPLOADED_IMAGE_WITH_SHA="europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:sha-$GIT_SHORT_SHA""
+UPLOADED_IMAGE_WITH_SHA="europe-west1-docker.pkg.dev/ror-goldie/ror7-gemini-saga-gallery/saga-gallery:sha-$GIT_SHORT_SHA"
 
 # # $1 can be unbound
 # if [ latest = "${1:-sthElse}" ]; then
