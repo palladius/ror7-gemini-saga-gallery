@@ -1,7 +1,8 @@
 ## Changelog
 
 ```
-2024-08-27 0.4.22 Added amazing localhost functionalties to make docker work in localhost. Now I know whats broken, see in READMeE. Just 2 things: DB and Ket #haidettopoco
+2024-08-27 0.4.24 TF is in a perfect state - its nearly finished. WOW!
+2024-08-27 0.4.23 Added amazing localhost functionalties to make docker work in localhost. Now I know whats broken, see in READMeE. Just 2 things: DB and Ket #haidettopoco
 2024-08-27 0.4.22 Added seed if needed functionality.
 2024-08-27 0.4.21 enable CB script
 2024-08-27 0.4.20 enable `auto_flushing` - this was bs

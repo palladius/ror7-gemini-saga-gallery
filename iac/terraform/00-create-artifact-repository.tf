@@ -13,4 +13,14 @@ resource "google_artifact_registry_repository" "my_repo" {
     provisioned_with = "terraform"
     app = var.app_name
   }
+
+    provisioner "local-exec" {
+        command = "./post-ar-creation-hook.sh"
+        #command = "echo ${var.gcp_region} >> ZZZ_gcp_region.txt"
+        environment = {
+            GCP_REGION = var.gcp_region
+            BAR = 1
+            BAZ = "true"
+        }
+    }
 }
