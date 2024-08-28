@@ -44,3 +44,14 @@ resource "google_storage_bucket" "prod_bucket" {
 #   entity = "allUsers"
 #  }
 
+# https://stackoverflow.com/questions/75373877/how-to-create-public-google-bucket-with-uniform-bucket-level-access-enabled
+resource "google_storage_bucket_iam_member" "member_dev" {
+  bucket = google_storage_bucket.dev_bucket.name
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
+}
+resource "google_storage_bucket_iam_member" "member_prod" {
+  bucket = google_storage_bucket.prod_bucket.name
+  role   = "roles/storage.objectViewer"
+  member = "allUsers"
+}
