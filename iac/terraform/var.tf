@@ -40,3 +40,10 @@ variable "my_repo_name" {
   description = "From ENVRC: MY_REPO_NAME. Used to build the AR/GCR path."
   default = "ror7-gemini-saga-gallery"
 }
+
+# From
+variable "APP_VERSION" {
+  type = string
+  description = "Should be the latest value from ../../VERSION populated in TFVARS. From ENV, hence upcased."
+  # NO DEFAULT! Needs to fail if not given.
+}
