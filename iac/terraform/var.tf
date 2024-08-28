@@ -24,3 +24,15 @@ variable "bucket_names" {
     "%sricc-public-%s-production"
   ]
 }
+
+variable "sa_key_path" {
+  type = string
+  default = "private/ror-goldie-scooby-n-sagallery.json"
+}
+
+
+variable "my_repo_name" {
+  type = string
+  description = "From ENVRC: MY_REPO_NAME. Used to build the AR/GCR path."
+  default = "ror7-gemini-saga-gallery"
+}
