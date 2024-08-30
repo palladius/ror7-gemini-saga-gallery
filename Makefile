@@ -71,3 +71,7 @@ gemini-generate-some-metadata:
 	gopro-gemini-iterator.py app/assets/images/saga-gallery/  --max-files 5
 gemini-generate-all-metadata:
 	gopro-gemini-iterator.py app/assets/images/saga-gallery/  --max-files 123456
+
+# interesting! Seen here: https://guides.rubyonrails.org/configuring.html#configuring-a-database
+db-inspect:
+	bin/rails runner 'puts ActiveRecord::Base.configurations.inspect'

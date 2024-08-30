@@ -42,10 +42,10 @@ development:
   #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   #url: <%= ENV.fetch("DATABASE_URL", '') %>
   #  <<: *default
-  database: <%= ENV["DB_NAME"] %>
-  username: <%= ENV["DB_USER"] %>
-  password: <%= ENV["DB_PASS"] %>
-  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DEV_DB_NAME"] %>
+  username: <%= ENV["DEV_DB_USER"] %>
+  password: <%= ENV["DEV_DB_PASS"] %>
+  host: <%= ENV["DEV_DB_HOST"] %>
   #DATABASE_URL
 
   # The specified database role being used to connect to PostgreSQL.
@@ -108,8 +108,19 @@ test:
 #   username: ror7_gemini_saga_gallery
 #   password: <%= ENV["ROR7_GEMINI_SAGA_GALLERY_DATABASE_PASSWORD"] %>
 
-production:
+production-sqlite3:
   adapter: sqlite3
   database: db/production-changeme-silly.sqlite3
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #url: <%= ENV.fetch("DATABASE_URL", '') %>
+  database: <%= ENV["PROD_DB_NAME"] %>
+  username: <%= ENV["PROD_DB_USER"] %>
+  # 🙆🙆🙆 TODO(ricc): fix the '$' in prod password which poorly aligns with .envrc! 🙆🙆🙆
+  password: <%= ENV["PROD_DB_PASS"] %>
+  host: <%= ENV["PROD_DB_HOST"] %>

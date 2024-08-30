@@ -23,10 +23,10 @@ def cutey_finestrella
   puts("🖼️🔑 RAILS_MASTER_KEY.size:       #{RAILS_MASTER_KEY.length}")
   puts("🖼️🔑 SECRET_KEY_BASE.frst5:       #{SECRET_KEY_BASE.first 5}")
   puts("🖼️🔑 SECRET_KEY_BASE.size:        #{SECRET_KEY_BASE.length}")
-  puts("🖼️   == 📊 Database == ")
-  puts("🖼️📊 ENV[DB_NAME]:               #{ENV.fetch 'DB_NAME', nil}")
-  puts("🖼️📊 ENV[DB_USER]:               #{ENV.fetch 'DB_USER', nil}")
-  puts("🖼️📊 ENV[DATABASE_URL]:          #{ENV.fetch('DATABASE_URL', '').first 10}")
+  puts("🖼️   == 📊 Database (#{Rails.env}) == ") # todo customize..
+  puts("🖼️📊 ENV[DEV_DB_NAME]:            #{ENV.fetch 'DEV_DB_NAME', nil}")
+  puts("🖼️📊 ENV[PROD_DB_NAME]:           #{ENV.fetch 'PROD_DB_NAME', nil}")
+  puts("🖼️📊 ENV[DATABASE_URL]  (ERR!):   #{ENV.fetch('DATABASE_URL', '').first 10}")
 
   puts("🖼️"*80)
 ##########################################################

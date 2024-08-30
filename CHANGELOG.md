@@ -1,6 +1,7 @@
 ## Changelog
 
 ```
+2024-08-27 0.4.25 Moving DB to postgres. Testing locally both DEV and PROD. Both work. Terraforming to this goes to Secret Manager too. TODO change Build script to leverage it.
 2024-08-27 0.4.24 TF is in a perfect state - its nearly finished. WOW!
 2024-08-27 0.4.23 Added amazing localhost functionalties to make docker work in localhost. Now I know whats broken, see in READMeE. Just 2 things: DB and Ket #haidettopoco
 2024-08-27 0.4.22 Added seed if needed functionality.

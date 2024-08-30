@@ -18,6 +18,7 @@ apply-yes-im-sure:
 	echo Initialization: init
 	terraform init
 
+up: apply-yes-im-sure
 
 watch-plan-every-5sec:
 	watch -n 5 make plan

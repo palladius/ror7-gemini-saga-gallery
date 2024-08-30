@@ -8,10 +8,11 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version:
-* Raisl version: `7.2.1` (super new from aug 24!)
+* Rails version: `7.2.1` (super new from aug 24!)
 * Configuration: `.envrc`
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment instructions
+    * Configure a new DB: `RAILS_ENV=production make destroy-and-reimport-YES-I_AM_SURE `
 
 ## Logo
 
