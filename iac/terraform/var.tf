@@ -47,3 +47,9 @@ variable "APP_VERSION" {
   description = "Should be the latest value from ../../VERSION populated in TFVARS. From ENV, hence upcased."
   # NO DEFAULT! Needs to fail if not given.
 }
+
+# TODO risolvi questo
+# variable "app_version" {
+#   type = string
+#   description = "TF complains with ricc: │ The root module does not declare a variable named app_version but a value was found in file terraform.tfvars. If you meant to use this value, add a variable block to the configuration."
+# }

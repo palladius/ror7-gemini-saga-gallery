@@ -14,6 +14,7 @@ plan: .terraform
 
 apply-yes-im-sure:
 	terraform apply -var="APP_VERSION=$(APP_VERSION)" -auto-approve
+# -compact-warnings
 .terraform:
 	echo Initialization: init
 	terraform init

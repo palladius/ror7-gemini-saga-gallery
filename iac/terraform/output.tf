@@ -16,3 +16,9 @@ output "secret_envrc_pantheon_url" {
 }
 
 # https://console.cloud.google.com/security/secret-manager?referrer=search&e=-13802955&mods=logs_tg_staging&project=ror-goldie
+output "cloudrun_dev_url" {
+    value = "TODO"
+}
+output "cloudrun_prod_url" {
+    value = "TODO"
+}
