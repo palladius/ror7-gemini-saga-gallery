@@ -18,10 +18,16 @@ def cutey_finestrella
   puts("🖼️🌞 Rails.env:                   #{Rails.env}")
   puts("🖼️🌞 ENV[MESSAGGIO_OCCASIONALE]:  #{ENV.fetch 'MESSAGGIO_OCCASIONALE', nil}")
   puts("🖼️🌞 ENV[SKAFFOLD_DEFAULT_REPO]:  #{ENV.fetch('SKAFFOLD_DEFAULT_REPO', nil)}")
+  puts("🖼️   == 🔑 Keys == ")
   puts("🖼️🔑 RAILS_MASTER_KEY.frst5:      #{RAILS_MASTER_KEY.first 5}")
   puts("🖼️🔑 RAILS_MASTER_KEY.size:       #{RAILS_MASTER_KEY.length}")
   puts("🖼️🔑 SECRET_KEY_BASE.frst5:       #{SECRET_KEY_BASE.first 5}")
   puts("🖼️🔑 SECRET_KEY_BASE.size:        #{SECRET_KEY_BASE.length}")
+  puts("🖼️   == 📊 Database == ")
+  puts("🖼️📊 ENV[DB_NAME]:               #{ENV.fetch 'DB_NAME', nil}")
+  puts("🖼️📊 ENV[DB_USER]:               #{ENV.fetch 'DB_USER', nil}")
+  puts("🖼️📊 ENV[DATABASE_URL]:          #{ENV.fetch('DATABASE_URL', '').first 10}")
+
   puts("🖼️"*80)
 ##########################################################
   :cutey_finestrella_all_good

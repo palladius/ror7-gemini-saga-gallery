@@ -12,6 +12,8 @@
 # Configure Using Gemfile
 # gem "pg"
 #
+
+# Looks like rake db:prepare calls DEFAULT!!!
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -20,21 +22,31 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   <% if ENV["DB_HOST"] %>
   host: <%= ENV["DB_HOST"] %>
-  username: postgres
-  password: postgres
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASS"] %>
   <% end %>
 
 
-development:
+development-on-sqlite:
   adapter: sqlite3
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
 # never gonna use it but keeping for migration purposes..
-# dev-on-pg:
-#   <<: *default
-#   database: ror7_gemini_saga_gallery_development
+development:
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #url: <%= ENV.fetch("DATABASE_URL", '') %>
+  #  <<: *default
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASS"] %>
+  host: <%= ENV["DB_HOST"] %>
+  #DATABASE_URL
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
