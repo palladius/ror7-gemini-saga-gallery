@@ -6,7 +6,7 @@ ruby '3.3.4' # on derek
 # Riccardo
 # sqlite for dev
 group :development, :test do
-  gem 'sqlite3', '~> 2.0'           # 2.0.4 is latest , '~> 1.4'
+  gem 'sqlite3', '~> 2.1'           # 2.0.4 is latest , '~> 1.4'
 end
 gem "image_processing", ">= 1.2" # ActiveStorage on steroids
 gem "tailwindcss-rails", "~> 2.7"
