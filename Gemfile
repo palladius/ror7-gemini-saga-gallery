@@ -9,7 +9,7 @@ group :development, :test do
   gem 'sqlite3', '~> 2.0'           # 2.0.4 is latest , '~> 1.4'
 end
 gem "image_processing", ">= 1.2" # ActiveStorage on steroids
-gem "tailwindcss-rails", "~> 2.7"
+gem "tailwindcss-rails", "~> 3.0"
 gem "foreman", "~> 0.88.1" # for the sweet bin/dev to work and debug JS :)
 gem 'google-cloud-storage'
 group :development do
