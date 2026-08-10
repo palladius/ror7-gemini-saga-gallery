@@ -53,3 +53,7 @@ iac/00-init.sh
 private/ror-goldie-scooby-n-sagallery.json
 private/
 db/production-changeme-silly.sqlite3
+.venv/
+*.mp4
+*.MP4
+

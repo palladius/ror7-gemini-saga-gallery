@@ -10,6 +10,10 @@ install-linux:
 dev: dev-troubleshot-js
 
 dev-troubleshot-js:
+	echo "RAILS_MASTER_KEY: $(RAILS_MASTER_KEY)"
+	echo "Riccardo, lets make sure we got ENV loaded correctly: DEV_DB_HOST=$(DEV_DB_HOST)"
+# fail if DEV_DB_HOST is not set
+	@if [ -z "$(DEV_DB_HOST)" ]; then echo "🌱 ERROR: DEV_DB_HOST is not set"; exit 1; fi
 	rake assets:precompile
 	bin/dev
 
